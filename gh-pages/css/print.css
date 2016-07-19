@@ -1,0 +1,37 @@
+.skip-links,.github-link,.internav,#navigation,nav{
+display:none;
+}	
+
+
+.col-1-2{
+	width:100%;
+	float:none;
+}
+
+#footer-block{
+	background:#fff;
+	margin-top:0;
+	padding:0;
+	border:0
+}
+
+.article{
+	margin-bottom:0;
+	padding:0;
+}
+
+footer p{
+	float:none;
+	width:100%
+}
+
+
+a[href^="http"]:after {
+  content: " (" attr(href) ")";
+  font-style:italic;
+}
+
+a{
+	text-decoration:none;
+	color:#000
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Formulaires - Aides et contrôles de saisie - Démonstrations - Guide de l'intégrateur - RGAA 3.0</title>
+		<link rel="stylesheet" href="../css/demo.css" media="screen">
+		<link rel="stylesheet" href="../css/form.css" media="screen">
+		<script src="../../js/highlight.pack.js"></script>
+		<link rel="stylesheet" href="../../css/tomorrow-night-eighties.css" media="screen">
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body class="form">
+		<header role="banner" class="main-header">
+			<div class="inside">
+				<h1>Guide de l'intégrateur</h1>
+				<p><a href="../../6-formulaires.md">Revenir à la fiche pratique « Formulaires »</a></p>
+			</div>
+		</header>
+
+		<div id="wrapper">
+
+		<nav role="navigation" class="nav-demo" id="nav">
+			<h2>Listes des démonstrations</h2>
+			<ul>
+				<li class="level"><span>Navigation</span>
+					<ul>
+						<li><a href="../2-navigation/access-rapide.html">Liens d'accès rapide</a></li>
+						<li><a href="../2-navigation/collection.html">Collection de pages</a></li>
+						<li><a href="../2-navigation/page-active.html">Indication de la page active</a></li>
+					</ul>
+				</li>
+				<li><a href="../5-liens/index.html">Liens</a></li>
+				<li class="level"><span>Formulaires</span>
+					<ul>
+						<li><a href="../6-formulaires/etiquettes.html">Étiquettes de champs</a></li>
+							<li><a href="../6-formulaires/aides-controles-saisie.html">Aides à la saisie</a></li>
+						<li><a href="../6-formulaires/regroupement.html">Regroupement de champs</a></li>
+					</ul>
+				</li>
+				<li><a href="../7-focus/index.html">Focus</a></li>
+				<li><a href="../9-images/index.html">Images</a></li>
+				<li><a href="../11-agrandissement-des-caracteres/index.html">Agrandissement des caractères</a></li>
+			</ul>
+		</nav>
+		
+			<main role="main" id="main">
+				<section>
+					<h2 class="fiche-title">Formulaires - Aides et contrôles de saisie - Démonstrations</h2>
+				</section>
+				<article class="article" id="article1">
+					<h3>Champs obligatoires</h3>
+
+					<div class="clear str-site">
+						<div class="col-1-2">
+							<h4 class="right">Conforme : Indication dans le label</h4>
+							<p><label for="prenom3">Votre prénom (champ obligatoire)</label>
+							<input type="text" id="prenom3" /></p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom  (champ obligatoire)&lt;/label&gt;
+&lt;input type="text" id="prenom" /&gt;</code></pre>
+						</div>
+						<div class="col-1-2">
+						&nbsp;
+						</div>	
+					</div>
+
+					<div class="clear str-site ">
+						<div class="col-1-2">
+							<h4 class="right">Conforme : Indication avant le formulaire</h4>
+							<p>Les champs obligatoires sont précédés d'une étoile *</p>
+							<p><label for="prenom4">Votre prénom *</label>
+							<input type="text" id="prenom4" /></p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" /&gt;</code></pre>
+						</div>
+						<div class="col-1-2">
+							<h4 class="wrong">Non conforme : Indication après le formulaire</h4>
+							<p><label for="prenom5">Votre prénom *</label>
+							<input type="text" id="prenom5" /></p>
+							<p>Les champs obligatoires sont précédés d'une étoile *</p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" /&gt;
+/**La mention du champ obligatoire est située après le formulaire**/</code></pre>
+						</div>
+					</div>
+
+					<div class="str-site clear">
+						<div class="col-1-2">
+							<h4 class="right">Conforme : <code>required</code> doublé d'une indication visuelle</h4>
+							<p>Les champs obligatoires sont précédés d'une étoile *</p>
+							<p><label for="prenom6">Votre prénom *</label>
+							<input type="text" id="prenom6" required/></p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" required /&gt;</code></pre>
+						</div>
+						<div class="col-1-2">
+							<h4 class="wrong">Non conforme : <code>required</code> sans indication visuelle</h4>
+							<p><label for="prenom7">Votre prénom</label>
+							<input type="text" id="prenom7" required/></p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom&lt;/label&gt;
+&lt;input type="text" id="prenom" required /&gt;
+/**required doit être doublé d'une indication visuelle**/</code></pre>
+						</div>
+					</div>
+					
+					<div class="str-site clear">
+						<div class="col-1-2">
+							<h4 class="right">Conforme : <code>aria-required</code> doublé d'une indication visuelle</h4>
+							<p>Les champs obligatoires sont précédés d'une étoile *</p>
+							<p><label for="prenom8">Votre prénom *</label>
+							<input type="text" id="prenom8" aria-required="true"/></p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" aria-required="true" /&gt;</code></pre>
+						</div>
+						<div class="col-1-2">
+							<h4 class="wrong">Non conforme : <code>aria-required</code> sans indication visuelle</h4>
+							<p><label for="prenom9">Votre prénom</label>
+							<input type="text" id="prenom9"  aria-required="true"/></p>
+							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom&lt;/label&gt;
+&lt;input type="text" id="prenom"  aria-required="true" /&gt;
+/** aria-required doit être doublé d'une indication visuelle**/</code></pre>
+						</div>
+					</div>	
+
+				</article>	
+				
+				<article class="article" id="article2">
+					<h3>Indication de format</h3>
+
+					<div class="clear str-site">
+						<div class="col-1-2">
+							<h4 class="right">Conforme : L'aide à la saisie est reliée au champ via <code>aria-describedby</code></h4>
+							<p><label for="taille">Quel est votre taille ?</label>
+							<input type="text" id="taille" aria-describedby="help-title"/><span id="help-taille"><abbr title="centimètres">cm</abbr></span></p>
+									
+							<pre><code class="code html">
+&lt;label for="taille"&gt;Quel est votre taille ?&lt;/label&gt;
+&lt;input id="taille" aria-describedby="help-title" type="text" /&gt;
+&lt;span id="help-taille"&gt;&lt;abbr title="centimètres"&gt;cm&lt;/abbr&gt;&lt;/span&gt;
+
+</code></pre>
+						</div>
+						<div class="col-1-2">	
+							<h4 class="wrong">Non conforme : L'aide à la saisie n'est pas reliée au champ</h4>						
+							<p><label for="taille1">Quel est votre taille ?</label>
+							<input id="taille1" type="text" /><span><abbr title="centimètres">cm</abbr></span></p>
+									
+							<pre><code class="code html">
+&lt;label for="taille"&gt;Quel est votre taille ?&lt;/label&gt;
+&lt;input id="taille" type="text" /&gt;
+&lt;span&gt;&lt;abbr title="centimètres"&gt;cm&lt;/abbr&gt;&lt;/span&gt;
+
+</code></pre>
+						</div>
+					</div>
+					
+					<div class="clear str-site">
+						<div class="col-1-2">
+							<h4 class="right">Conforme : L'aide à la saisie est dans l'étiquette</h4>
+							<p><label for="mail">Votre adresse mail (nomprenom@domain.com)</label>
+							<input type="text" id="mail""/></p>
+									
+							<pre><code class="code html">
+&lt;p&gt;&lt;label for="mail"&gt;Votre adresse mail (nomprenom@domain.com)&lt;/label&gt;
+&lt;input type="text" id="mail""/&gt;&lt;/p&gt;
+
+</code></pre>
+						</div>
+						<div class="col-1-2">	
+							<h4 class="wrong">Non conforme : L'aide à la saisie est après le champ de formulaire</h4>						
+							<p><label for="mail1">Votre adresse mail</label>
+							<input type="text" id="mail1"/><span> (nomprenom@domain.com) </span></p>
+									
+							<pre><code class="code html">
+&lt;p&gt;&lt;label for="mail"&gt;Votre adresse mail&lt;/label&gt;
+&lt;input type="text" id="mail"/&gt;&lt;span&gt; (nomprenom@domain.com) &lt;/span&gt;&lt;/p&gt;
+
+</code></pre>
+						</div>
+					</div>
+				</article>
+
+			</main>
+
+			<footer id="footer" role="contentinfo" class="clear">
+				<h2>Licence d'utilisation</h2>
+				<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="../img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+				<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+			</footer>
+
+		</div>
+	</body>
+</html>
+

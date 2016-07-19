@@ -1,0 +1,183 @@
+/** Agrandissement des caractères
+	prefixe `ac-`
+**/
+
+[aria-hidden="true"]{
+	display:none;
+}
+
+.tabs__list{
+	padding:0;
+	display:flex;
+}
+
+.tabs__list li{
+	list-style:none;
+
+	padding-left: 0;
+}
+
+.tabs__list li:before{
+	content:"";
+}
+
+.tabs__list button{
+	border:1px solid #333;
+	border-right:0;
+	background:0;
+	cursor:pointer;
+	padding:5px;
+}
+.tabs__list li:last-child button{
+	border:1px solid #333;
+}
+.tabs__list button[aria-selected="true"]{
+	background:#933C53;
+	color:#fff;
+}
+
+.ac-text-pixel{
+	font-size:16px;
+}
+
+.ac-text-em{
+	font-size:1em;
+}
+
+.ac-fixed-sized,
+.ac-non-fixed-sized{
+	padding:20px;
+	background:#4B437B;
+	color:#fff;
+}
+
+.ac-fixed-sized{
+	height:150px;
+}
+
+.ac-non-fixed-sized{
+	min-height:150px;
+}
+
+.ac-pixel1,
+.ac-pixel2,
+.ac-pixel3,
+.ac-em1,
+.ac-em2,
+.ac-em3{
+	padding:5px;
+	display:block;
+}
+
+.ac-pixel1, 
+.ac-em1{
+	border:3px solid #B63840;
+}
+
+.ac-pixel2,
+.ac-em2{
+	border:2px solid #723F65;
+	margin:10px 5px;
+}
+
+.ac-pixel3,
+.ac-em3{
+	border:2px solid #28468E;
+	margin:5px;
+}
+
+.ac-pixel1{
+ font-size:16px;
+}
+
+.ac-pixel2{
+ font-size:24px;
+}
+
+.ac-pixel3{
+ font-size:18px;
+}
+
+.ac-em1{
+ font-size:1em;
+}
+
+.ac-em2{
+ font-size:1.5em;
+}
+
+.ac-em3{
+ font-size:1.125em;
+}
+
+.ac-overflow-hidden,
+.ac-overflow-auto{
+	height:80px;
+	padding:20px;
+	background:#4B437B;
+	color:#fff;
+}
+
+.ac-overflow-hidden{
+	overflow:hidden;
+}
+
+.ac-overflow-auto{
+	overflow:auto;
+}
+
+.ac-mq-px span,
+.ac-mq-em span{
+	display:inline-block;
+	width:49%;
+	background:#f2f2f2;
+	vertical-align:top;
+	min-height:150px;
+	padding:10px;
+}
+
+.ac-mq-px-1,
+.ac-mq-em-1{
+	margin-right:0.9%;
+}
+
+@media screen and (max-width:767px){
+	.ac-mq-px span{
+		display:block;
+		width:100%;
+		margin-bottom:15px
+	}
+
+	.ac-mq-px-1{
+		margin-right:0;
+	}
+}
+
+@media screen and (max-width:47.9375em){
+	.ac-mq-em span{
+		display:block;
+		width:100%;
+		margin-bottom:15px
+	}
+
+	.ac-mq-em-1{
+		margin-right:0;
+	}
+}
+
+.ac-nowrap{
+	background:#ddd;
+	max-width:100%;
+	white-space:nowrap;
+}
+
+.ac-no-nowrap{
+	max-width:100%;
+	background:#ddd;
+	white-space:initial;
+}
+
+code{
+	color:#000
+}
+

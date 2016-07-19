@@ -1,0 +1,39 @@
+.home:before,
+.icon:before{
+	content:"";
+	display:inline-block;
+	background:url("../img/home.png") no-repeat center;
+	height:20px;
+	width:30px;
+}
+
+.btn{
+	background:var(--blue-2);
+	padding:15px 15px 10px 15px;
+	display:inline-block;
+	margin-right:5px;
+	text-decoration:none;
+	color:#fff
+}
+
+.sr{
+	position:absolute;
+	top:-10000px;
+}
+
+.arrow:after {
+  content: "\2192";
+  display: inline-block;
+  margin-left: 7px;
+  font-weight:bold;
+  color:#fff;
+  font-size:1.4em
+}
+
+.btn img{
+	padding:0 10px
+}
+
+.no-outline a{
+	outline:0
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Guide de l'intégrateur RGAA 3</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+<div class="main-header">
+	<div class="inside">
+		<ul class="skip-links">
+			<li><a href="#main">contenu</a></li>
+			<li><a href="#navigation">navigation</a></li>
+		</ul>
+		<header role="banner" class="header  clear" id="banner">
+			<h1 class="title">Guide de l'intégrateur RGAA 3</h1>
+		</header>
+
+		<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+			<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+			<ul class="sommaire is-hidden" id="sommaireToggle">
+				<li><a href="index.html">Introduction</a></li>
+				<li><a href="1-gabarit-general.html">Fiche 1&nbsp;: Gabarit général</a></li>
+				<li><a href="2-navigation.html">Fiche 2&nbsp;: Navigation</a></li>
+				<li><a href="3-contenus.html">Fiche 3&nbsp;: Contenus</a></li>
+				<li><a href="4-tableaux.html">Fiche 4&nbsp;: Tableaux</a></li>
+				<li><a href="5-liens.html">Fiche 5&nbsp;: Liens</a></li>
+				<li><a href="6-formulaires.html">Fiche 6&nbsp;: Formulaires</a></li>
+				<li><a href="7-focus.html">Fiche 7&nbsp;: Prise de focus</a></li>
+				<li><a href="8-distinction-fond-forme.html">Fiche 8&nbsp;: Respecter la distinction fond et forme</a></li>
+				<li><a href="9-images.html">Fiche 9&nbsp;: Images</a></li>
+				<li><a href="10-infos-forme-couleur.html">Fiche 10&nbsp;: Informations par la couleur et la forme</a></li>
+				<li><a href="11-agrandissement-des-caracteres.html">Fiche 11&nbsp;: Agrandissement des caractères</a></li>
+				<li><a href="12-multimedia.html">Fiche 12&nbsp;: Multimédia</a></li>
+			</ul>
+		</nav>
+		<div class="github-link">
+			<p><a href="https://github.com/DISIC/guide-integrateur">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, ko)" href="https://github.com/DISIC/guide-integrateur/pdf/guide-integrateur.pdf">Télécharger</a></p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="next" href="1-gabarit-general.html">Fiche 1&nbsp;: Gabarit général <span aria-hidden="true"> &raquo; </span></a></li>
+		</ul>
+	</nav>
+
+	<main id="main" role="main">
+		<article class="article">
+			<p>Ce guide de l’intégrateur vous est proposé dans le cadre des ressources accompagnant la prise en main de la version&nbsp;3 du référentiel général d’accessibilité pour les administrations (RGAA&nbsp;3).</p>
+<p>Toutes les règles et tous les exemples d’implémentation donnés ici se réfèrent à la version&nbsp;3 du RGAA.</p>
+<p>Le RGAA&nbsp;3 est composé d’un <a href="http://references.modernisation.gouv.fr/rgaa/introduction-RGAA.html">document d’introduction</a>, d’un <a href="http://references.modernisation.gouv.fr/rgaa/guide-accompagnement-RGAA.html">guide d’accompagnement</a> et d’un <a href="http://references.modernisation.gouv.fr/rgaa/criteres.html">référentiel technique</a>. Cet ensemble de documents a une portée réglementaire puisqu’ils ont été rendus officiels par l'<a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000030540064&amp;dateTexte=20150921">arrêté du 29 avril 2015</a>, lui-même venant préciser l'<a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000809647&amp;fastPos=1&amp;fastReqId=1497340759&amp;categorieLien=cid&amp;oldAction=rechTexte#LEGIARTI000006682279">article 47 de la loi&nbsp;2005-102 du 11 février 2005</a> et l'<a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000030540064&amp;categorieLien=id">arrêté&nbsp;2009-546 du 14 mai 2009</a>.</p>
+<p>Les ressources complémentaires sont des supports sans valeur réglementaire et visent à vous aider à rendre vos contenus numériques accessibles et conformes au RGAA&nbsp;3.</p>
+		</article>
+		<article class="article">
+			<h2 id="&#224;-qui-sadresse-ce-guide">&#192; qui s'adresse ce guide&#160;?</h2>
+			<p>Ce guide s’adresse aux intégrateurs chargés de réaliser les gabarits HTML et CSS et se focalise sur les problématiques de respect de la sémantique et de la mise en forme. Il n’est pas question dans ce guide de JavaScript, qui fait l’objet avec ARIA, d’un tout autre guide.</p>
+		</article>
+		<article class="article">
+			<h3 id="&#224;-chacun-son-m&#233;tier">&#192; chacun son m&#233;tier</h3>
+			<p>Certaines problématiques ne sont volontairement pas abordées, car elles dépendent d’autres acteurs que l’intégrateur web. Par exemple, les contrastes de couleurs ou la pertinence des liens ne sont pas du ressort de l’intégrateur. Ce sont aux concepteurs, designers ou contributeurs de s’attacher à respecter ces contraintes.</p>
+		</article>
+		<article class="article">
+			<h2 id="mode-demploi-du-guide">Mode d'emploi du guide</h2>
+			<p>Le guide a été pensé comme une série de fiches pratiques sur le même modèle pour en faciliter l’utilisation. Vous pouvez les lire en fonction de vos besoins, sans avoir à suivre un ordre particulier, chaque fiche étant indépendante.</p>
+			<p>Certaines fiches proposent également des démonstrations d’implémentation conforme et non conforme. Les démonstrations, exemples et explications s’appuient uniquement sur les navigateurs utilisés dans <a href="http://references.modernisation.gouv.fr/rgaa/base-de-reference.html">la base de référence</a> et sur les recommandations de la version&nbsp;3 du RGAA.</p>
+			<p>Vous retrouverez dans chaque fiche&nbsp;:</p>
+			<ul>
+				<li><strong>Sommaire</strong>&nbsp;: pour naviguer à travers l’ensemble des fiches du guide&nbsp;;</li>
+				<li><strong>Synthèse</strong>&nbsp;: les principaux points à retenir&nbsp;;</li>
+				<li><strong>Correspondances RGAA&nbsp;3</strong>&nbsp;: les correspondances avec les critères du référentiel technique du RGAA&nbsp;3.</li>
+			</ul>
+		</article>
+		<article class="article">
+			<h2 id="contribution-web-et-rgaa-3">Intégration web et RGAA 3</h2>
+			<p>Th&#233;matiques du RGAA 3 abord&#233;es &#224; travers ces fiches&#160;:</p>
+			<ul>
+				<li>Images</li>
+				<li>Cadres</li>
+				<li>Tableaux</li>
+				<li>Liens</li>
+				<li>Éléments obligatoires</li>
+				<li>Structuration de l’information</li>
+				<li>Présentation de l’information</li>
+				<li>Formulaires</li>
+				<li>Navigation</li>
+				<li>Consultation</li>
+			</ul>
+		</article>
+		<article class="article">
+			<h2 id="guides-connexes">Ressources connexes et références</h2>
+				<ul>
+				<li>Guide <a href="http://disic.github.io/guide-contribuer_accessible/">«&nbsp;Contribuer sur le web de manière accessible&nbsp;»</a></li>
+				<li><a href="http://disic.github.io/rgaa_methodologie/">Méthodologie de test RGAA 3</a><li>
+				<li><a href="http://www.w3.org/Translations/NOTE-UNDERSTANDING-WCAG20-fr/Overview.html#contents">Comprendre les WCAG&nbsp;: description de cas utilisateurs et d’impacts par type de handicap</a></li>
+				<li><a href="https://www.w3.org/TR/WCAG20-TECHS/" hreflang="en">Liste des techniques et échecs WCAG&nbsp;2.0 (ressource en anglais)</a></li>
+			</ul>
+		</article>
+	</main>
+
+
+
+	<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

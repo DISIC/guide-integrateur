@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Fiche 8 : Respecter la distinction fond et forme - Guide de l'intégrateur RGAA 3</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" href="highlight/styles/tomorrow-night-eighties.css" media="all">
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="main-header">
+	<div class="inside">
+		<ul class="skip-links">
+			<li><a href="#main">contenu</a></li>
+			<li><a href="#navigation">navigation</a></li>
+		</ul>
+		<header role="banner" class="header  clear" id="banner">
+			<h1 class="title">Guide de l'intégrateur RGAA 3</h1>
+		</header>
+
+		<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+			<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+			<ul class="sommaire is-hidden" id="sommaireToggle">
+				<li><a href="index.html">Introduction</a></li>
+				<li><a href="1-gabarit-general.html">Fiche 1&nbsp;: Gabarit général</a></li>
+				<li><a href="2-navigation.html">Fiche 2&nbsp;: Navigation</a></li>
+				<li><a href="3-contenus.html">Fiche 3&nbsp;: Contenus</a></li>
+				<li><a href="4-tableaux.html">Fiche 4&nbsp;: Tableaux</a></li>
+				<li><a href="5-liens.html">Fiche 5&nbsp;: Liens</a></li>
+				<li><a href="6-formulaires.html">Fiche 6&nbsp;: Formulaires</a></li>
+				<li><a href="7-focus.html">Fiche 7&nbsp;: Prise de focus</a></li>
+				<li><a href="8-distinction-fond-forme.html">Fiche 8&nbsp;: Respecter la distinction fond et forme</a></li>
+				<li><a href="9-images.html">Fiche 9&nbsp;: Images</a></li>
+				<li><a href="10-infos-forme-couleur.html">Fiche 10&nbsp;: Informations par la couleur et la forme</a></li>
+				<li><a href="11-agrandissement-des-caracteres.html">Fiche 11&nbsp;: Agrandissement des caractères</a></li>
+				<li><a href="12-multimedia.html">Fiche 12&nbsp;: Multimédia</a></li>
+			</ul>
+		</nav>
+		<div class="github-link">
+			<p><a href="https://github.com/DISIC/guide-integrateur">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, ko)" href="https://github.com/DISIC/guide-integrateur/pdf/guide-integrateur.pdf">Télécharger</a></p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="7-focus.html"><span aria-hidden="true"> &laquo; </span>Fiche 7&nbsp;: Prise de focus </a></li>
+			<li><a class="next" href="9-images.html">Fiche 9&nbsp;: Images <span aria-hidden="true"> &raquo; </span></a></li>
+		</ul>
+	</nav>
+
+	<main id="main" role="main">
+		<h1 class="fiche-title">Fiche 8&nbsp;: Respecter la distinction fond et forme</h1>
+
+		<div class="bloc-haut">
+			<ul class="nav-context">
+				<li><a href="#introduction">Introduction - cas utilisateur</a></li>
+				<li><a href="#semantique">Utiliser les balises HTML pour leur sens propre</a></li>
+				<li><a href="#miseenformecss">Mise en forme exclusive via CSS</a></li>
+				<li><a href="#visiblesanscss">Contenu visible sans CSS</a></li>
+				<li><a href="#comprehensiblesanscss">Contenu compréhensible sans CSS</a></li>
+				<li><a href="#textescaches">Textes cachés correctement positionnés</a></li>
+				<li><a href="#ailleurs">Voir ailleurs / Ressources</a></li>
+				<li><a href="#criteres">Critères RGAA</a></li>
+			</ul>
+	
+			<aside role="complementary" class="clear resume">
+				<h2 id="resume">Synthèse</h2>
+				<p>Désactivez les styles de vos pages et&nbsp;:</p>
+				<ul>
+				<li>comparez la même page avec les styles activés et assurez-vous qu'aucun élément de contenu n'a disparu&nbsp;;</li>
+				<li>assurez-vous que les contenus restent compréhensibles et que leur succession dans le code source est cohérente.</li>
+				</ul>
+			</aside>
+		</div>
+
+		<article class="article" id="introduction">
+			<h2>Introduction - Cas utilisateurs</h2>
+			<p>Pour créer un site web, on utilise principalement deux langages&nbsp;: HTML et CSS. HTML permet de créer un balisage sémantique de votre contenu, c'est le «&nbsp;fond&nbsp;». CSS permet de réaliser des mises en forme (couleurs, positionnements, etc.), c'est la «&nbsp;forme&nbsp;». Les deux ont des objectifs différents et ne doivent jamais jouer un rôle différent. Simplement&nbsp;: la mise en forme ne doit jamais apporter du sens au contenu et le contenu ne doit pas être pourvu d'éléments de mises en forme. Votre site doit être compréhensible sans la mise en forme.</p>
+			<p>Les utilisateurs aveugles qui naviguent avec un lecteur d'écran n'ont pas accès à la mise en forme. Donc si vous implémentez une image avec du contenu en propriété de fond (<code>background-image</code>), ce contenu est totalement inexistant pour ces utilisateurs.</p>
+			<p>Certains utilisateurs ayant des problèmes de vues divers (vision des couleurs, taille des caractères, police particulière) vont charger une feuille de style utilisateur ou utiliser des fonctionnalités dédiées pour adapter la présentation de votre site à leur propre besoin de mise en forme. Si vous aviez défini des éléments qui apportent de l'information (comme des images de fond, des contenus générés en CSS), ces éléments vont disparaître et ces utilisateurs n'y auront pas accès.</p>
+		</article>
+
+		<article class="article" id="semantique">
+			<h2>Utiliser les balises HTML pour leur sens propre</h2>
+			<p>Vous ne devez pas utiliser les balises à des fins de présentation. En effet, l'utilisation de balises HTML pour une finalité différente de celle prévue dans les spécifications (au regard du type de document déclaré) est interdite.</p>
+			<p>Par exemple&nbsp;:</p>
+				<ul>
+				<li class="forbidden">utilisation des balises <code>&lt;hx&gt;</code> à seule fin de créer un effet typographique&nbsp;;</li>
+				<li class="forbidden">utilisation de la balise <code>&lt;blockquote&gt;</code> à seule fin de mettre un paragraphe en retrait (puisque cette balise possède nativement un style qui créée une indentation).</li>
+			</ul>
+			<p class="important"><strong>Important&nbsp;</strong>: l'utilisation d'éléments <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code> pour créer des paragraphes est considérée comme non conforme. Vous devez toujours utiliser l'élément <code>&lt;p&gt;</code> lorsque vous rédigez ou insérez un paragraphe.</p>
+		</article>
+
+		<article class="article" id="miseenformecss">
+			<h2>Mise en forme exclusive via CSS</h2>
+			<p>Toutes vos mises en forme doivent être réalisées uniquement en CSS. CSS met à disposition 3 moyens pour réaliser les mises en forme&nbsp;:</p>
+			<ul>
+				<li>la liaison de la page HTML avec une feuille de style externe <code>&lt;link rel="stylesheet" href="#" media="screen"&gt;</code>&nbsp;;</li>
+				<li>la balise <code>&lt;style&gt;&lt;/style&gt;</code> dans le <code>&lt;head&gt;</code> de la page&nbsp;;</li>
+				<li>l'attribut <code>style</code> sur des éléments HTML.</li>
+			</ul>
+			<p>Il est interdit de trouver dans vos pages des éléments et attributs de mise en forme. En effet, les feuilles de style peuvent être surchargées par une feuille de style utilisateurs, mais il est beaucoup plus compliqué et quelquefois impossible de surcharger les mises en forme générées via des éléments ou attributs.</p>
+			<p class="forbidden">Tous les attributs de mise en forme sont interdits (<code>align</code>, <code>alink</code>, <code>background</code>, <code>basefont</code>, <code>bgcolor</code>, <code>border</code>, <code>color</code>, <code>link</code>, <code>text</code>, <code>vlink</code>,…).
+			<code>width</code> et <code>height</code> sont autorisés uniquement sur les éléments <code>&lt;img&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code> et <code>&lt;canvas&gt;</code>.</p>
+			<p class="forbidden">Les éléments <code>&lt;basefont&gt;</code>, <code>&lt;blink&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;font&gt;</code>, <code>&lt;marquee&gt;</code>, <code>&lt;s&gt;</code>, <code>&lt;strike&gt;</code>, <code>&lt;tt&gt;</code> et <code>&lt;u&gt;</code> sont interdits.</p>
+		</article>
+
+		<article class="article" id="visiblesanscss">
+			<h2>Contenu visible sans CSS</h2>
+			<h3>Images de fond</h3>
+			<p>Les images de fond (insérées par la propriété CSS <code>background</code> ou <code>background-image</code>) ne doivent jamais être porteuses d'information.</p>
+			<p>Lorsque vous en êtes à l'étape de conception de vos gabarits, face à la maquette graphique, prenez soin de distinguer les éléments qui seront des images, et dans ces images, de distinguer celles qui sont porteuses d'information et celles qui sont purement décoratives.</p>
+			<p>Lorsque les images sont purement décoratives (couleur de fond, illustration décorative), vos choix d'intégration sont libres, à condition de respecter les règles d'accessibilité&nbsp;:</p>
+			<ul>
+			<li>Les images de décoration sont implémentées en propriétés de fond CSS, il n'y a a priori aucun problème d'accessibilité.</li>
+			<li>Les images de décoration seront implémentées en image HTML <code>&lt;img&gt;</code> par exemple, veillez donc à définir une alternative vide <code>&lt;img alt=""&gt;</code>.</li>
+			</ul>
+			<p>Les images porteuses d'information sont très souvent des images contenant du texte en image. Dans ces cas, il ne faut pas en faire des images de fond, mais les implémenter en image HTML en veillant à définir une alternative pertinente.</p>
+			<p><strong>Nous renvoyons à la fiche sur les images pour les différents types d'implémentation d'images, notamment au travers des balises <code>&lt;svg&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code> et <code>&lt;canvas&gt;</code></strong>.</p>
+			<p><em>Lorsqu'aucune autre solution n'est possible, il est toléré de transmettre l'information véhiculée par l'image de fond via un texte masqué de manière accessible (en positionnement par exemple). Néanmoins, cette solution peut poser d'autres problèmes lorsque sont utilisés des dispositifs spécifiques, comme certains modes de contrastes élevés.</em></p>
+			<h3>Contenu généré en CSS <code>content</code></h3>
+			<p>La propriété CSS <code>content</code> permet d'injecter du contenu dans le HTML. Pour autant, même si ce contenu est visible avec les CSS activés, il ne l'est plus lorsque les CSS sont désactivées. Ainsi, vous ne devez donc jamais utiliser <code>content</code> pour insérer du contenu texte.</p>
+			<p><code>content</code> et les pseudos-sélecteurs <code>:after</code> et <code>:before</code> sont très souvent utilisés pour l'insertion d'icônes grâce à des polices d'icônes. Si les icônes sont purement décoratives, alors il n'y a pas de problème d'accessibilité. Par contre, s'il s'agit d'icônes porteuses d’information, alors vous devez veiller à ce qu'un moyen alternatif permette de récupérer cette information.</p>
+			<div class="clear">
+				<div class="col-1-2">
+				<p>L'exemple emblématique (mais pas unique) de cette pratique est la création de liens ou de boutons avec des icônes. L'implémentation est très souvent lacunaire puisque ces liens et boutons sont au final des éléments vides.</p>
+				<p>Dans ces cas, un utilisateur aveugle qui n'a pas accès à la mise en forme ne sait pas à quoi sert le lien ou le bouton.</p>
+				</div>
+				<div class="col-1-2">
+				<img src="img/icone-lien.png" alt="">
+<pre><code class="code">&lt;a href="#"&gt;&lt;span class="fa fa-home"&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;button&gt;&lt;span class="fa fa-cog"&gt;&lt;/span&gt;&lt;/button&gt;</code></pre>
+<pre><code class="code">.fa-home:before {
+ content: "\f015";
+}
+.fa-cog:before {
+ content: "\f013";
+}</code></pre>
+				</div>
+			</div>
+			<hr />
+			<div class="clear">
+				<div class="col-1-2">
+					<p>Vous avez des contraintes graphiques et vous ne pouvez mettre un texte visible à la place de ces icônes. Une solution acceptable est de fournir un texte positionné hors écran. De plus, ces icônes ne sont pas forcément compréhensibles par tout le monde, il est donc généralement préférable (mais non obligatoire) d'ajouter un attribut <code>title</code> qui reprend ce texte positionné hors écran, pour que tous les utilisateurs aient la même information.</p>
+				</div>
+				<div class="col-1-2">
+<pre><code class="code">&lt;a href="#" title="Accueil"&gt;
+ &lt;span class="fa fa-home"&gt;&lt;/span&gt;
+ &lt;span class="sr"&gt;Accueil&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;button title="Paramètres"&gt;
+ &lt;span class="fa fa-cog"&gt;&lt;/span&gt;
+ &lt;span class="sr"&gt;Paramètres&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+<pre><code class="code">.sr{
+ position:absolute;
+ top:-10000px;
+}</code></pre>
+				</div>
+			</div>
+			<p class="important"><strong>Important</strong>&nbsp;: la présence seule d'un <code>title</code> sur un lien n'en fait pas un lien conforme. Un lien doit toujours avoir un intitulé texte entre les balises <code>&lt;a&gt;</code> et <code>&lt;/a&gt;</code></p>
+			<p>D'autres solutions sont à votre disposition&nbsp;:</p>
+			<ul>
+				<li>utiliser des images HTML <code>&lt;img&gt;</code> avec une alternative <code>alt</code> renseignée&nbsp;;</li>
+				<li>utiliser des images <code>&lt;svg&gt;</code> avec un élément <code>&lt;desc&gt;</code> renseigné.</li>
+			</ul>
+			<h3>Couleur de fond pour les textes</h3>
+			<p>Pour chaque couleur de police de texte (propriété CSS <code>color</code>) déclarée dans vos styles, cette police doit avoir une couleur de fond déclarée (propriété CSS <code>background-color</code>), au moins héritée d'un parent. Littéralement, il suffit d'avoir une couleur de fond sur l'élément <code>&lt;body&gt;</code> (parent de n'importe quel enfant du document). Pour aider l'utilisateur, il est préférable de prendre ce critère de manière plus stricte. Le cas le plus courant est de trouver une couleur de fond d'élément simulée par une image de fond. Lorsque les images sont désactivées (cas d'utilisateurs présentant des troubles de l'attention, par exemple), cette couleur n'est plus disponible et le texte n'est plus lisible.</p>
+		</article>
+
+		<article class="article" id="comprehensiblesanscss">
+			<h2>Contenu compréhensible sans CSS</h2>
+			<p>C'est souvent à cause de contraintes de mise en forme que la structure HTML est altérée au détriment de la compréhension.</p>
+			<p>Par exemple, votre maquette propose une mise en forme des actualités avec une image-lien et les thèmes de l'actualité sur la gauche et sur la droite, le titre et le chapeau de l'actualité.</p>
+			<img src="img/ordre-coherent.png" alt="">
+			<div class="clear">
+				<div class="col-1-2">
+					<p>Votre première réaction est de placer dans le code source&nbsp;: d'abord l'image, puis les mots clés, puis le titre et enfin le chapeau.</p>
+				</div>
+				<div class="col-1-2">
+<pre><code class="code">&lt;div class="left"&gt;
+ &lt;a href="#"&gt;&lt;img src="..." alt="lien" /&gt;&lt;/a&gt;
+ &lt;ul&gt;
+  &lt;li&gt;thème 1&lt;/li&gt;
+  &lt;li&gt;thème 2&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="right"&gt;
+ &lt;h2&gt;Titre de l'actualité&lt;/h2&gt;
+ &lt;p&gt;Chapeau de l'actualité&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+				</div>
+			</div>
+
+			<p>Pourtant le titre est également le titre du lien et des thèmes. Un ordre cohérent voudrait que le titre <strong>précède</strong> tous les éléments auxquels il se rapporte dans le code source. Libre à vous de réaliser ensuite les mises en forme que vous souhaitez.</p>
+			<p>De plus, si plusieurs actualités se succèdent, comment un utilisateur, notamment aveugle qui navigue au lecteur d'écran, va-t-il être en mesure de comprendre quel titre se rapporte à quel lien et à quels thèmes ? Si l'utilisateur suit un ordre logique linéaire de consultation, sa compréhension sera fausse parce que la succession des éléments dans le code source ne reflète pas le sens, compréhensible uniquement par la mise en forme.</p>
+			<div class="clear">
+				<div class="col-1-2">
+					<p>La construction correcte dans ce cas est donc&nbsp;:</p>
+				</div>
+				<div class="col-1-2">
+<pre><code class="code">&lt;div class="right"&gt;
+ &lt;h2&gt;Titre de l'actualité&lt;/h2&gt;
+ &lt;p&gt;Chapeau de l'actualité&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="left"&gt;
+ &lt;a href="#"&gt;&lt;img src="..." alt="lien" /&gt;&lt;/a&gt;
+ &lt;ul&gt;
+ &lt;li&gt;thème 1&lt;/li&gt;
+ &lt;li&gt;thème 2&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+			</div>
+			<p>Il faut toujours garder à l'esprit que la mise en forme (la maquette du site) ne doit pas être fondée sur des choix de structure qui répondent uniquement à des demandes de mises en forme. Lorsque vous modifiez ou choisissez une certaine implémentation des éléments HTML, et un certain ordre de succession des éléments, posez-vous toujours la question de savoir si dans cet ordre, sans la mise en forme, il est possible de comprendre les informations sans équivoque.</p>
+		</article>
+
+		<article class="article" id="textescaches">
+			<h2>Textes cachés correctement positionnés</h2>
+			<p>Lorsqu'un élément est rendu visible sur action de l'utilisateur, le composant qui a permis de rendre visible l'élément caché doit être situé <strong>avant</strong> dans le code source. La raison simple est qu'un utilisateur aveugle qui parcourt la page de manière linéaire n'aura pas conscience de l'apparition du texte caché, si le composant est situé après.</p>
+			<div class="clear">
+				<div class="col-1-2">
+					<img src="img/textescaches.png" alt="">
+				</div>
+				<div class="col-1-2">
+				<p>Dans cet exemple, un bouton permet d'étendre la zone de contenu pour afficher une partie de contenus qui était cachée. Lorsque l'on active le bouton, le focus reste dessus. Une fois que le contenu est apparu, le focus est toujours sur ce bouton. L'utilisateur aveugle va alors parcourir le contenu suivant en pensant accéder au contenu qu'il a afficher avec le bouton, ce qui n'est pas le cas dans cet exemple.</p>
+				</div>
+			</div>
+			<p><em>Une exception à cette règle&nbsp;: lorque le texte caché appartient à un composant ARIA, l'ordre dans lequel il doit être implémenté, par rapport à l'évènement déclencheur, est imposé par le motif de conception ARIA utilisé.</em></p>
+		</article>
+	</main>
+
+	<aside role="complementary" id="footer-block" class="clear">
+		<div class="col-1-2">
+			<h2 id="ailleurs">Voir ailleurs / Ressources</h2>
+			<ul>
+				<li><a href="https://www.filamentgroup.com/lab/bulletproof_icon_fonts.html">Script de gestion du chargement des polices d'icônes et mise en place d'alternatives accessibles (Filament Group - AfontGarde - ressource en anglais)</a></li>
+				<li><a href="https://addons.mozilla.org/en-US/firefox/addon/stylish/">Stylish - Extension Firefox permettant de gérer facilement des feuilles de style utilisateurs</a></li>
+				<li><a href="https://userstyles.org/">Banque de feuilles de style utilisateurs</a></li>
+			</ul>
+		</div>
+		<div class="col-1-2">
+			<h2 id="criteres">Critères RGAA 3</h2>
+			<ul>
+				<li>8.9 [A]</li>
+				<li>10.1 [A]</li>
+				<li>10.2 [A]</li>
+				<li>10.3 [A]</li>
+				<li>10.13 [A]</li>
+			</ul>
+		</div>
+	</aside>
+
+	<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
