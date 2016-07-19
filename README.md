@@ -6,7 +6,7 @@ Ce guide de l’intégrateur vous est proposé dans le cadre des ressources acco
 
 Toutes les règles et tous les exemples d’implémentation donnés ici se réfèrent à la version&nbsp;3 du RGAA. 
 
-Le RGAA&nbsp;3 est composé d’un [document d’introduction][1], d’un [guide d’accompagnement][2] et d’un [référentiel technique][3]. Cet ensemble de documents a une portée réglementaire puisqu’ils ont été rendus officiels par l'[arrêté du 29 avril 2015][4], lui-même venant préciser l'[article 47 de la loi 2005-102 du 11 février 2005][5] et l'[arrêté 2009-546 du 14 mai 2009][6].
+Le RGAA&nbsp;3 est composé d’un [document d’introduction][1], d’un [guide d’accompagnement][2] et d’un [référentiel technique][3]. Cet ensemble de documents a une portée réglementaire puisqu’ils ont été rendus officiels par l'[arrêté du 29 avril 2015][4], lui-même venant préciser l'[article 47 de la loi 2005-102 du 11 février 2005][5] et l'[arrêté 2009-546 du 14 mai 2009][6].
 
 Les ressources complémentaires sont des supports sans valeur réglementaire et visent à vous aider à rendre vos contenus numériques accessibles et conformes au RGAA&nbsp;3.
 
@@ -70,7 +70,7 @@ Thématiques du RGAA&nbsp;3 abordées à travers ces fiches&nbsp;:
 
 ### Licence d’utilisation
 
-Ce document est la propriété du Secrétariat général à la modernisation de l’action publique français (SGMAP). Il est placé sous la [licence ouverte 1.0 ou ultérieure][33], équivalente à une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternité, ajouter un lien vers la version originale du document disponible sur le [compte <span lang="en">GitHub</span> de la DInSIC][34].
+Ce document est la propriété du Secrétariat général à la modernisation de l’action publique français (SGMAP). Il est placé sous la [licence ouverte 1.0 ou ultérieure][33], équivalente à une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternité, ajouter un lien vers la version originale du document disponible sur le [compte <span lang="en">GitHub</span> de la DInSIC][34].
 
 [1]:	http://references.modernisation.gouv.fr/rgaa/
 [2]:	http://references.modernisation.gouv.fr/rgaa/guide-accompagnement-RGAA.html
@@ -99,4 +99,4 @@ Ce document est la propriété du Secrétariat général à la modernisation de 
 [35]: 	https://www.w3.org/TR/WCAG20-TECHS/
 [36]: 	http://disic.github.io/rgaa_methodologie/
 
-Ce guide est rédigé au format Markdown Vous trouverez sur ce [lien Wikipedia](https://fr.wikipedia.org/wiki/Markdown) des précisions sur ce langage. Il peut également être consulté en ligne ou au format PDF.
+Ce guide est rédigé au format Markdown Vous trouverez sur ce [lien Wikipedia](https://fr.wikipedia.org/wiki/Markdown) des précisions sur ce langage. Il peut également être [consulté en ligne](https://disic.github.io/guide-integrateur/) ou au [format PDF (1,2 Mo)](pdf/guide-integrateur.pdf).

@@ -45,7 +45,7 @@
 		</nav>
 		<div class="github-link">
 			<p><a href="https://github.com/DISIC/guide-integrateur">Contribuer</a>
-			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, ko)" href="https://github.com/DISIC/guide-integrateur/raw/master/pdf/guide-integrateur.pdf">Télécharger</a></p>
+			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, 1,2 Mo)" href="https://github.com/DISIC/guide-integrateur/pdf/guide-integrateur.pdf">Télécharger</a></p>
 		</div>
 	</div>
 </div>
@@ -72,7 +72,7 @@
 				<li><a href="#ailleurs">Voir ailleurs / Ressources</a></li>
 				<li><a href="#criteres">Critères RGAA</a></li>
 			</ul>
-
+	
 			<aside role="complementary" class="clear resume">
 				<h2 id="resume">Synthèse</h2>
 				<ul>
@@ -83,7 +83,7 @@
 					<li>Utiliser les relations <code>id</code>, <code>headers</code> pour relier les cellules de données à leurs en-têtes dans le cas de cellules fusionnées.</li>
 				</ul>
 			</aside>
-
+		
 		</div>
 
 		<article class="article" id="introduction">
@@ -114,13 +114,13 @@
 &lt;/table&gt;</code></pre>
 			<p>De plus, vous devez vous assurer que la linéarisation du tableau permet la compréhension du contenu&nbsp;: un tableau est lu de gauche à droite. Assurez-vous que le contenu reste compréhensible de cette manière.</p>
 			<p><strong>Note</strong>&nbsp;: L’API ARIA propose un mécanisme permettant de surcharger le rôle natif d’un élément pour proposer des composants. Ainsi, il est possible d’utiliser des tableaux de mise en forme pour construire des listes, par exemple en implémentant les rôles `list` et `listitem` sur les éléments du tableau. Si cet usage est fortement déconseillé, il est néanmoins conforme. Le tableau étant restitué comme une liste et non plus comme un tableau, il n’est pas utile de signaler qu’il s’agit d’un tableau de présentation via le rôle <code>presentation</code>.</p>
-
+			
 			<h3>À propos du <code>role="presentation"</code></h3>
 			<p>Le <code>role="presentation"</code> permet d'annuler la sémantique native de l'élément qui la possède.</p>
 			<p>Dans notre cas, si le tableau possède le <code>role="presentation"</code>, un lecteur d'écran ne restituera pas le tableau, mais uniquement les contenus dans l'ordre dans lequel ils sont insérés dans les cellules. L'utilisateur aura l'impression d'être sur du simple texte.</p>
 			<p>De plus, les comportements clavier disponibles sur ces éléments (par exemple <kbd>flèche droite</kbd> pour aller à la cellule suivante) ne sont plus actifs et retrouvent leur fonctionnalité d'origine (par exemple, <kbd>flèche droite</kbd> permet de se déplacer de caractère en caractère).</p>
 			<p><a href="https://www.w3.org/TR/wai-aria/roles#presentation">Voir l'explication du <code>role="presentation"</code> dans la spécification WAI-ARIA</a></p>
-
+		
 		</article>
 
 		<article class="article" id="tableauxsimples">
