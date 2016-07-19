@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Fiche 9 : Images - Guide de l'intégrateur RGAA 3</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" href="highlight/styles/tomorrow-night-eighties.css" media="all">
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="main-header">
+	<div class="inside">
+		<ul class="skip-links">
+			<li><a href="#main">contenu</a></li>
+			<li><a href="#navigation">navigation</a></li>
+		</ul>
+		<header role="banner" class="header  clear" id="banner">
+			<h1 class="title">Guide de l'intégrateur RGAA 3</h1>
+		</header>
+
+		<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+			<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+			<ul class="sommaire is-hidden" id="sommaireToggle">
+				<li><a href="index.html">Introduction</a></li>
+				<li><a href="1-gabarit-general.html">Fiche 1&nbsp;: Gabarit général</a></li>
+				<li><a href="2-navigation.html">Fiche 2&nbsp;: Navigation</a></li>
+				<li><a href="3-contenus.html">Fiche 3&nbsp;: Contenus</a></li>
+				<li><a href="4-tableaux.html">Fiche 4&nbsp;: Tableaux</a></li>
+				<li><a href="5-liens.html">Fiche 5&nbsp;: Liens</a></li>
+				<li><a href="6-formulaires.html">Fiche 6&nbsp;: Formulaires</a></li>
+				<li><a href="7-focus.html">Fiche 7&nbsp;: Prise de focus</a></li>
+				<li><a href="8-distinction-fond-forme.html">Fiche 8&nbsp;: Respecter la distinction fond et forme</a></li>
+				<li><a href="9-images.html">Fiche 9&nbsp;: Images</a></li>
+				<li><a href="10-infos-forme-couleur.html">Fiche 10&nbsp;: Informations par la couleur et la forme</a></li>
+				<li><a href="11-agrandissement-des-caracteres.html">Fiche 11&nbsp;: Agrandissement des caractères</a></li>
+				<li><a href="12-multimedia.html">Fiche 12&nbsp;: Multimédia</a></li>
+			</ul>
+		</nav>
+		<div class="github-link">
+			<p><a href="https://github.com/DISIC/guide-integrateur">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, ko)" href="https://github.com/DISIC/guide-integrateur/raw/master/pdf/guide-integrateur.pdf">Télécharger</a></p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="8-distinction-fond-forme.html"><span aria-hidden="true"> &laquo; </span>Fiche 8&nbsp;: Respecter la distinction fond et forme </a></li>
+			<li><a class="next" href="10-infos-forme-couleur.html">Fiche 10&nbsp;: Informations par la forme et la couleur <span aria-hidden="true"> &raquo; </span></a></li>
+		</ul>
+	</nav>
+
+	<main id="main" role="main">
+		<h1 class="fiche-title">Fiche 9&nbsp;: Images</h1>
+
+		<div class="bloc-haut">
+			<ul class="nav-context">
+				<li><a href="#introduction">Introduction - cas utilisateur</a></li>
+				<li><a href="#alternativeobligatoire">Alternative obligatoire</a></li>
+				<li><a href="#imagedecoration">Image de décoration&nbsp;: alternative vide</a></li>
+				<li><a href="#imageinformation">Image porteuse d'information&nbsp;: alternative renseignée</a></li>
+				<li><a href="#imagestextes">Images textes</a></li>
+				<li><a href="#captcha">Captcha</a></li>
+				<li><a href="#imagelegendee">Image légendée</a></li>
+				<li><a href="#ailleurs">Voir ailleurs / Ressources</a></li>
+				<li><a href="#criteres">Critères RGAA</a></li>
+			</ul>
+
+			<aside role="complementary" class="clear resume">
+				<h2 id="resume">Synthèse</h2>
+				<ul>
+					<li>Définir un <code>alt</code> sur toutes les images <code>&lt;img /&gt;</code>.</li>
+					<li>Définir un <code>alt=""</code> sur les images <code>&lt;img /&gt;</code> de décoration.</li>
+					<li>Définir une alternative conforme et pertinente en fonction du type d'image lorsqu'elle est porteuse d'information.</li>
+					<li>Éviter au maximum les images textes.</li>
+				</ul>
+			</aside>
+		</div>
+
+		<article class="article" id="introduction">
+			<h2>Introduction - cas utilisateurs</h2>
+			<p>Les images véhiculent parfois une information non textuelle. Cette information, qui peut aider à comprendre le contenu auquel elle se rapporte, doit être accessible à tous.</p>
+			<p>Fournir une alternative est indispensable pour les utilisateurs qui ne perçoivent pas le contenu visuel. Un lecteur d'écran ou une loupe vocalisée vont pouvoir accéder à cette alternative et la restituer à l'utilisateur ou bien l'information sera affichée si l'utilisateur désactive les images.</p>
+		</article>
+
+		<article class="article" id="alternativeobligatoire">
+			<h2>Alternative obligatoire</h2>
+			<p>Toutes les images doivent avoir un attribut <code>alt</code>. Cette obligation tient au fait qu'en l'absence de cet attribut, un lecteur d'écran restitue le chemin ou le nom du fichier source, ce qui n'a pas de sens pour l'utilisateur.</p>
+			<p>Les éléments concernés sont&nbsp;:</p>
+			<ul>
+				<li>les images <code>&lt;img&gt;</code>&nbsp;;</li>
+				<li>les zones réactives <code>&lt;area&gt;</code>&nbsp;;</li>
+				<li>les champs de formulaire <code>&lt;input type="image"&gt;</code>.</li>
+			</ul>
+		</article>
+
+		<article class="article" id="imagedecoration">
+			<h2>Image de décoration&nbsp;: alternative vide</h2>
+			<div class="clear">
+				<div class="col-1-2">
+					<p>Si l'image ne véhicule aucune information, l'image n'a pas vocation à être restituée. Son alternative doit alors être vide. De plus, elle ne doit pas posséder d'attribut <code>title</code>.</p>
+				</div>
+				<div class="col-1-2">
+<pre><code class="code">&lt;img src="url.png" alt="" /&gt;</code></pre>
+				</div>
+			</div>
+
+			<p>Nous vous renvoyons à la <a href="http://disic.github.io/guide-contribuer_accessible/images.html" data-original-href="http://disic.github.io/guide-contribuer_accessible/images.html">fiche «&nbsp;Quand une image vaut mille mots&nbsp;» du guide «&nbsp;Contribuer sur le web de manière accessible&nbsp;»</a> pour de plus amples informations sur les différences entre les images de décoration et les images porteuses d'information.</p>
+			<h3>Cas des images <code>svg</code></h3>
+			<div class="clear">
+				<div class="col-1-2">
+					<p>Dans le cas des images vectorielles, vous devez ajouter la propriété <code>aria-hidden="true"</code> et vous assurez qu'aucun attribut ou aucune balise ne sont présents afin de labelliser l'image&nbsp;:</p>
+					<ul>
+						<li>les balises <code>&lt;title&gt;</code> et <code>&lt;desc&gt;</code> sont absentes ou vides&nbsp;;</li>
+						<li>la balise <code>&lt;svg&gt;</code>, ou l’un de ses enfants, est dépourvue d’attribut <code>title</code>&nbsp;;</li>
+						<li>la balise <code>&lt;svg&gt;</code>, ou l’un de ses enfants, est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image vectorielle (<code>aria-label</code>, <code>aria-describedby</code>, <code>aria-labelledby</code> par exemple).</li>
+					</ul>
+				</div>
+				<div class="col-1-2">
+					<p>En résumé, une image vectorielle de décoration devrait ressembler à ceci&nbsp;:</p>
+<pre><code class="code">&lt;svg role="img"&gt;
+&lt;/svg&gt;</code></pre>
+				</div>
+			</div>
+
+			<h3>Cas des images <code>&lt;object&gt;</code>, <code>&lt;canvas&gt;</code> et <code>&lt;embed&gt;</code></h3>
+			<p>Dans le cas des images <code>&lt;object&gt;</code> ou <code>&lt;canvas&gt;</code>, vous devez ajouter la propriété <code>aria-hidden="true"</code> et vous devez vous assurer qu'aucun attribut ou aucune balise ne sont présents afin de labelliser l'image&nbsp;:</p>
+			<ul>
+				<li>l’alternative textuelle entre les balises ouvrantes et fermantes (<code>&lt;object&gt;</code> et <code>&lt;/object&gt;</code>, ou <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code>) est vide&nbsp;;</li>
+				<li>la balise (<code>&lt;object&gt;</code> ou <code>&lt;canvas&gt;</code>), ou l’un des ses enfants, est dépourvue de role, propriété ou état ARIA visant à labelliser l’image (<code>aria-label</code>, <code>aria-describedby</code>, <code>aria-labelledby</code> par exemple).</li>
+			</ul>
+			<p>Concernant la balise <code>&lt;embed&gt;</code>, elle doit posséder un attribut <code>aria-hidden="true"</code> et elle, ou l’un des ses enfants, doit être dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (<code>aria-label</code>, <code>aria-describedby</code>, <code>aria-labelledby</code> par exemple).</p>
+		</article>
+
+		<article class="article" id="imageinformation">
+			<h2>Image porteuse d'information&nbsp;: alternative renseignée</h2>
+			<p>Une image porteuse d'information apporte une information par elle-même ou essentielle à la compréhension du contenu auquel elle est associée. L'alternative doit être courte et suffisante pour que les utilisateurs qui ne peuvent pas voir l'image comprennent l'information véhiculée.</p>
+			<p>Pour les images (<code>img</code>, <code>input type="image"</code>, <code>area</code>), vous devez renseigner l'attribut <code>alt</code>.</p>
+			<p>S'il est présent, le contenu de l'attribut <code>title</code> est égal au contenu de l'attribut <code>alt</code>.</p>
+			<h3>Images vectorielles</h3>
+			<p>Pour les images vectorielles, vous devez&nbsp;:</p>
+			<ul>
+				<li>ajouter un <code>role="img"</code> sur la balise <code>&lt;svg&gt;</code>&nbsp;;</li>
+				<li>ajouter une propriété <code>aria-label</code> contenant l'alternative de l'image&nbsp;;</li>
+				<li>ajouter une balise <code>&lt;desc&gt;</code> qui contient un passage de texte identique à la propriété <code>aria-label</code>.</li>
+			</ul>
+			<p>Attention, s'il est présent, l'attribut <code>title</code> doit être équivalent à <code>aria-label</code> et <code>&lt;desc&gt;</code>.</p>
+			<p>Si ces implémentations ne sont pas possibles, vous pouvez créer un lien adjacent à l'image qui mène vers une alternative pertinente et identique au contenu de la balise <code>&lt;desc&gt;</code>.</p>
+			<h3>Images <code>&lt;object type="image"&gt;</code>, <code>&lt;canvas&gt;</code> et <code>&lt;embed type="image"&gt;</code></h3>
+			<p>Pour ce type d'images, vous pouvez soit labelliser l'image directement, soit mettre en place une alternative.</p>
+			<p>Si vous souhaitez mettre en place une alternative, vous devez&nbsp;:</p>
+			<ul>
+				<li>faire suivre l'image d'un lien adjacent permettant d'afficher une page ou un passage de texte contenant une alternative pertinente&nbsp;;</li>
+				<li>proposer un mécanisme qui permet à l'utilisateur de remplacer l'image par un texte alternatif pertinent&nbsp;;</li>
+				<li>ou proposer un mécanisme qui permet à l'utilisateur de remplacer l'image par une image possédant une alternative pertinente.</li>
+			</ul>
+			<p>Note&nbsp;: dans le cas des images <code>&lt;canvas&gt;</code>, l'alternative peut être donnée par un texte présent entre les balises <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code>.</p>
+			<p>Si vous souhaitez labelliser l'image&nbsp;:</p>
+			<ul>
+				<li>ajouter la propriété <code>aria-label</code> qui contient le texte permettant de donner l'alternative pertinente de l'image&nbsp;;
+				<li>ou ajouter la propriété <code>aria-labelledby</code> qui référence un passage de texte pertinent.
+			</ul>
+			<p>Attention, s'il est présent, l'attribut <code>title</code> doit être équivalent à <code>aria-label</code> ou <code>aria-labelledby</code> selon l'implémentation choisie.</p>
+
+			<h3>Compatibilité avec les technologies d'assistance</h3>
+			<p>Pour les implémentations d'images avec les éléments <code>&lt;svg&gt;</code> et <code>&lt;canvas&gt;</code>, assurez-vous de la restitution des alternatives avec les lecteurs d'écran et navigateurs de la base de référence. En effet, les implémentations, notamment ARIA, étant très changeantes dans les navigateurs et lecteurs d'écran, l'important, au-delà de respecter le balisage, est de vous assurer de leur restitution par un lecteur d'écran.</p>
+		</article>
+
+		<article class="article" id="imagestextes">
+			<h2>Images textes</h2>
+			<p>Lorsque des images textes peuvent être reproduites en HTML et CSS, vous ne devez pas utiliser d'image. Ceci est tout à fait possible&nbsp;:</p>
+			<ul>
+				<li>lorsque les polices utilisées ne sont pas des polices complexes,</li>
+				<li>lorsque l'image ne joue pas sur une déformation de la police,</li>
+				<li>ou encore, lorsque la police n'est pas une police qu'il serait  compliqué à reproduire.</li>
+			</ul>
+			<p>Dans tous les autres cas, les textes doivent être réalisés en HTML et CSS, afin de permettre aux utilisateurs qui en ont besoin d’adapter leur lisibilité (agrandissement des caractères, modification des couleurs, des polices…).</p>
+			<p>Il est également possible de conserver les images textes et de fournir à l'utilisateur un mécanisme de remplacement qui lui permet, avec un bouton par exemple, de remplacer toutes les images textes en textes stylés.</p>
+		</article>
+
+		<article class="article" id="captcha">
+			<h2>Captcha</h2>
+			<p>Dans le cas des images tests (Captcha), il faut renseigner l'alternative de manière à permettre à l'utilisateur de comprendre la nature et le rôle de l'image.</p>
+			<p>Par exemple, <code>alt="saisir le code présent dans l'image"</code>.</p>
+			<p>Ce mécanisme devra être complété par une méthode alternative permettant à l'utilisateur de récupérer le code pour pouvoir poursuivre.</p>
+		</article>
+
+		<article class="article" id="imagelegendee">
+			<h2>Image légendée</h2>
+			<p>HTML5 introduit les balises <code>figure</code> et <code>figcaption</code> afin de pouvoir associer une légende à une image.</p>
+			<p>Il est important de le faire lorsque la légende contient des informations sur l'image, par exemple un copyright, qu'un utilisateur aveugle pourrait mal interpréter en pensant que l'information de la légende concerne le texte associé.</p>
+			<div class="clear">
+				<div class="col-1-2">
+					<p>L'utilisation de <code>figure</code> et <code>figcaption</code> réclame certaines adaptions pour combler le manque de support éventuel par les technologies d'assistance.</p>
+				</div>
+				<div class="col-1-2">
+<pre><code class="code">&lt;figure role="group"&gt;
+ &lt;img alt="illustration" src="img.png"/&gt;
+ &lt;figcaption&gt;
+  Illustration - copyright 2016 Simon Jérémi
+ &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+				</div>
+			</div>
+			<p>Le texte «&nbsp;illustration&nbsp;» dans l'alternative de l'image crée une liaison sémantique entre l'image et sa légende, dans le cas où l'élément figure ne serait pas restitué par les lecteurs d'écran. Le texte «&nbsp;illustration&nbsp;» est repris dans la légende pour établir la liaison sémantique.</p>
+			<p><a href="demo/9-images/index.html">Voir la démonstration d'images légendées</a></p>
+		</article>
+
+	</main>
+
+	<aside role="complementary" id="footer-block" class="clear">
+		<div class="col-1-2">
+			<h2 id="ailleurs">Voir ailleurs / Ressources</h2>
+			<ul>
+				<li><a href="http://disic.github.io/guide-contribuer_accessible/images.html">Fiche «&nbsp;Quand une image vaut mille mots&nbsp;» du guide «&nbsp;Contribuer sur le web de manière accessible&nbsp;»</a></li>
+			</ul>
+		</div>
+		<div class="col-1-2">
+			<h2 id="criteres">Critères RGAA 3</h2>
+			<ul>
+				<li>1.1 [A]</li>
+				<li>1.2 [A]</li>
+				<li>1.3 [A]</li>
+				<li>1.4 [A]</li>
+				<li>1.5 [A]</li>
+				<li>1.8 [AA]</li>
+				<li>1.9 [AAA]</li>
+				<li>1.10 [A]</li>
+			</ul>
+		</div>
+	</aside>
+
+	<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

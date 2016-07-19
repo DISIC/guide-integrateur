@@ -5,15 +5,15 @@
 		<title>Formulaires - Aides et contrôles de saisie - Démonstrations - Guide de l'intégrateur - RGAA 3.0</title>
 		<link rel="stylesheet" href="../css/demo.css" media="screen">
 		<link rel="stylesheet" href="../css/form.css" media="screen">
-		<script src="../../js/highlight.pack.js"></script>
-		<link rel="stylesheet" href="../../css/tomorrow-night-eighties.css" media="screen">
+		<script src="../../highlight/highlight.pack.js"></script>
+		<link rel="stylesheet" href="../../highlight/styles/tomorrow-night-eighties.css" media="screen">
 		<script>hljs.initHighlightingOnLoad();</script>
 	</head>
 	<body class="form">
 		<header role="banner" class="main-header">
 			<div class="inside">
 				<h1>Guide de l'intégrateur</h1>
-				<p><a href="../../6-formulaires.md">Revenir à la fiche pratique « Formulaires »</a></p>
+				<p><a href="../../6-formulaires.html">Revenir à la fiche pratique « Formulaires »</a></p>
 			</div>
 		</header>
 
@@ -69,7 +69,8 @@
 							<p>Les champs obligatoires sont précédés d'une étoile *</p>
 							<p><label for="prenom4">Votre prénom *</label>
 							<input type="text" id="prenom4" /></p>
-							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+							<pre><code class="code html">&lt;p&gt;Les champs obligatoires sont précédés d'une étoile *&lt;/p&gt;
+&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
 &lt;input type="text" id="prenom" /&gt;</code></pre>
 						</div>
 						<div class="col-1-2">
@@ -79,7 +80,8 @@
 							<p>Les champs obligatoires sont précédés d'une étoile *</p>
 							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
 &lt;input type="text" id="prenom" /&gt;
-/**La mention du champ obligatoire est située après le formulaire**/</code></pre>
+&lt;p&gt;Les champs obligatoires sont précédés d'une étoile *&lt;/p&gt;</code></pre>
+							<p>La mention du champ obligatoire est située après le formulaire</p>
 						</div>
 					</div>
 
@@ -89,7 +91,8 @@
 							<p>Les champs obligatoires sont précédés d'une étoile *</p>
 							<p><label for="prenom6">Votre prénom *</label>
 							<input type="text" id="prenom6" required/></p>
-							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+							<pre><code class="code html">&lt;p&gt;Les champs obligatoires sont précédés d'une étoile *&lt;/p&gt;
+&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
 &lt;input type="text" id="prenom" required /&gt;</code></pre>
 						</div>
 						<div class="col-1-2">
@@ -97,8 +100,8 @@
 							<p><label for="prenom7">Votre prénom</label>
 							<input type="text" id="prenom7" required/></p>
 							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom&lt;/label&gt;
-&lt;input type="text" id="prenom" required /&gt;
-/**required doit être doublé d'une indication visuelle**/</code></pre>
+&lt;input type="text" id="prenom" required /&gt;</code></pre>
+							<p><code lang="en">required</code> doit être doublé d'une indication visuelle</p>
 						</div>
 					</div>
 					
@@ -108,7 +111,8 @@
 							<p>Les champs obligatoires sont précédés d'une étoile *</p>
 							<p><label for="prenom8">Votre prénom *</label>
 							<input type="text" id="prenom8" aria-required="true"/></p>
-							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+							<pre><code class="code html">&lt;p&gt;Les champs obligatoires sont précédés d'une étoile *&lt;/p&gt;
+&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
 &lt;input type="text" id="prenom" aria-required="true" /&gt;</code></pre>
 						</div>
 						<div class="col-1-2">
@@ -116,8 +120,8 @@
 							<p><label for="prenom9">Votre prénom</label>
 							<input type="text" id="prenom9"  aria-required="true"/></p>
 							<pre><code class="code html">&lt;label for="prenom"&gt;Votre prénom&lt;/label&gt;
-&lt;input type="text" id="prenom"  aria-required="true" /&gt;
-/** aria-required doit être doublé d'une indication visuelle**/</code></pre>
+&lt;input type="text" id="prenom"  aria-required="true" /&gt;</code></pre>
+							<p><code>aria-required</code> doit être doublé d'une indication visuelle</p>
 						</div>
 					</div>	
 

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Fiche 4 : Tableaux - Guide de l'intégrateur RGAA 3</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" href="highlight/styles/tomorrow-night-eighties.css" media="all">
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="main-header">
+	<div class="inside">
+		<ul class="skip-links">
+			<li><a href="#main">contenu</a></li>
+			<li><a href="#navigation">navigation</a></li>
+		</ul>
+		<header role="banner" class="header  clear" id="banner">
+			<h1 class="title">Guide de l'intégrateur RGAA 3</h1>
+		</header>
+
+		<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+			<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+			<ul class="sommaire is-hidden" id="sommaireToggle">
+				<li><a href="index.html">Introduction</a></li>
+				<li><a href="1-gabarit-general.html">Fiche 1&nbsp;: Gabarit général</a></li>
+				<li><a href="2-navigation.html">Fiche 2&nbsp;: Navigation</a></li>
+				<li><a href="3-contenus.html">Fiche 3&nbsp;: Contenus</a></li>
+				<li><a href="4-tableaux.html">Fiche 4&nbsp;: Tableaux</a></li>
+				<li><a href="5-liens.html">Fiche 5&nbsp;: Liens</a></li>
+				<li><a href="6-formulaires.html">Fiche 6&nbsp;: Formulaires</a></li>
+				<li><a href="7-focus.html">Fiche 7&nbsp;: Prise de focus</a></li>
+				<li><a href="8-distinction-fond-forme.html">Fiche 8&nbsp;: Respecter la distinction fond et forme</a></li>
+				<li><a href="9-images.html">Fiche 9&nbsp;: Images</a></li>
+				<li><a href="10-infos-forme-couleur.html">Fiche 10&nbsp;: Informations par la couleur et la forme</a></li>
+				<li><a href="11-agrandissement-des-caracteres.html">Fiche 11&nbsp;: Agrandissement des caractères</a></li>
+				<li><a href="12-multimedia.html">Fiche 12&nbsp;: Multimédia</a></li>
+			</ul>
+		</nav>
+		<div class="github-link">
+			<p><a href="https://github.com/DISIC/guide-integrateur">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, ko)" href="https://github.com/DISIC/guide-integrateur/raw/master/pdf/guide-integrateur.pdf">Télécharger</a></p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="3-contenus.html"><span aria-hidden="true"> &laquo; </span>Fiche 3&nbsp;: Contenus </a></li>
+			<li><a class="next" href="5-liens.html">Fiche 5&nbsp;: Liens <span aria-hidden="true"> &raquo; </span></a></li>
+		</ul>
+	</nav>
+
+	<main id="main" role="main">
+		<h1 class="fiche-title">Fiche 4&nbsp;: Tableaux</h1>
+
+		<div class="bloc-haut">
+			<ul class="nav-context">
+				<li><a href="#introduction">Introduction - cas utilisateur</a></li>
+				<li><a href="#miseenforme">Tableaux de mise en forme</a></li>
+				<li><a href="#tableauxsimples">Tableaux de données simples</a></li>
+				<li><a href="#tableauxcomplexes">Tableaux de données complexes</a></li>
+				<li><a href="#plusloin">Pour aller plus loin</a></li>
+				<li><a href="#ailleurs">Voir ailleurs / Ressources</a></li>
+				<li><a href="#criteres">Critères RGAA</a></li>
+			</ul>
+
+			<aside role="complementary" class="clear resume">
+				<h2 id="resume">Synthèse</h2>
+				<ul>
+					<li>Implémenter le <code>role="presentation"</code> sur les tableaux de mise en forme.</li>
+					<li>Déclarer les cellules d'en-têtes dans des éléments <code>&lt;th&gt;</code>.</li>
+					<li>Implémenter un attribut <code>scope="col"</code> pour les en-têtes de colonnes.</li>
+					<li>Implémenter un attribut <code>scope="row"</code> pour les en-têtes de lignes.</li>
+					<li>Utiliser les relations <code>id</code>, <code>headers</code> pour relier les cellules de données à leurs en-têtes dans le cas de cellules fusionnées.</li>
+				</ul>
+			</aside>
+
+		</div>
+
+		<article class="article" id="introduction">
+			<h2>Introduction - cas utilisateurs</h2>
+			<p>Un tableau est toujours complexe à utiliser avec un lecteur d'écran. Une personne aveugle n'a pas une vision globale du tableau. Elle le parcourt de manière séquentielle&nbsp;: une case après l'autre et ligne à ligne. Afin d'améliorer son expérience, les lecteurs d'écran offrent des fonctionnalités de parcours étendues en utilisant les flèches de direction.</p>
+			<p>Pour adapter le tableau aux capacités de restitution et aux fonctionnalités de navigation étendues, il est important de définir des en-têtes de colonnes ou de lignes et de les relier explicitement aux cellules de données.</p>
+		</article>
+
+		<article class="article" id="miseenforme">
+			<h2>Tableaux de mise en forme</h2>
+			<p>Le premier conseil serait simplement de ne pas utiliser de tableau (<code>&lt;table&gt;</code>) pour réaliser des mises en forme. Les tableaux sont utiles pour présenter des données tabulaires. C’est leur fonction principale.</p>
+			<p>Si malgré tout, vous êtes amenés à utiliser des éléments <code>&lt;table</code> pour réaliser certaines mises en forme, alors vous devez&nbsp;:</p>
+			<ul>
+				<li>Implémenter <code>role="presentation"</code> sur l'élément <code>&lt;table&gt;</code>.</li>
+				<li>Ne pas utiliser les éléments propres aux tableaux de données&nbsp;: <code>&lt;caption&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>&nbsp;;</li>
+				<li>Ne pas utiliser les attributs propres aux tableaux de données&nbsp;: <code>scope</code>, <code>headers</code>.</li>
+			</ul>
+			<p>Synthèse, si vous utilisez un tableau de données, la structure doit ressembler à celle-ci&nbsp;:</p>
+<pre><code class="code">&lt;table role="presentation"&gt;
+ &lt;tr&gt;
+  &lt;td&gt;[votre contenu]&lt;/td&gt;
+  &lt;td&gt;[votre contenu]&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td&gt;[votre contenu]&lt;/td&gt;
+  &lt;td&gt;[votre contenu]&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+			<p>De plus, vous devez vous assurer que la linéarisation du tableau permet la compréhension du contenu&nbsp;: un tableau est lu de gauche à droite. Assurez-vous que le contenu reste compréhensible de cette manière.</p>
+			<p><strong>Note</strong>&nbsp;: L’API ARIA propose un mécanisme permettant de surcharger le rôle natif d’un élément pour proposer des composants. Ainsi, il est possible d’utiliser des tableaux de mise en forme pour construire des listes, par exemple en implémentant les rôles `list` et `listitem` sur les éléments du tableau. Si cet usage est fortement déconseillé, il est néanmoins conforme. Le tableau étant restitué comme une liste et non plus comme un tableau, il n’est pas utile de signaler qu’il s’agit d’un tableau de présentation via le rôle <code>presentation</code>.</p>
+
+			<h3>À propos du <code>role="presentation"</code></h3>
+			<p>Le <code>role="presentation"</code> permet d'annuler la sémantique native de l'élément qui la possède.</p>
+			<p>Dans notre cas, si le tableau possède le <code>role="presentation"</code>, un lecteur d'écran ne restituera pas le tableau, mais uniquement les contenus dans l'ordre dans lequel ils sont insérés dans les cellules. L'utilisateur aura l'impression d'être sur du simple texte.</p>
+			<p>De plus, les comportements clavier disponibles sur ces éléments (par exemple <kbd>flèche droite</kbd> pour aller à la cellule suivante) ne sont plus actifs et retrouvent leur fonctionnalité d'origine (par exemple, <kbd>flèche droite</kbd> permet de se déplacer de caractère en caractère).</p>
+			<p><a href="https://www.w3.org/TR/wai-aria/roles#presentation">Voir l'explication du <code>role="presentation"</code> dans la spécification WAI-ARIA</a></p>
+
+		</article>
+
+		<article class="article" id="tableauxsimples">
+			<h2>Tableaux de données simples</h2>
+			<p>Un tableau est considéré comme simple s'il ne possède pas de cellules fusionnées qui rendent la compréhension délicate et s'il ne présente pas une structure (notamment des sous-contextes) qui rend sa compréhension dépendante d'une mise en forme.</p>
+			<p>Une manière d'identifier un tableau de donnée simple est de considérer les en-têtes&nbsp;: si les en-têtes concernent toute une ligne ou toute une colonne alors il s'agit d'un tableau de données simple.</p>
+			<p>Pour un tableau de données simple, vous devez&nbsp;:</p>
+			<ul>
+				<li>Implémenter un élément <code>&lt;caption&gt;</code> qui est le titre du tableau, il permet aux utilisateurs de comprendre quelles données ils vont rencontrer.</li>
+				<li>Implémenter les en-têtes dans des éléments <code>&lt;th&gt;</code>&nbsp;;</li>
+				<li>Pour les en-têtes de colonnes, l'élément <code>&lt;th&gt;</code> doit avoir l'attribut <code>scope="col"</code>&nbsp;;</li>
+				<li>Pour les en-têtes de lignes, l'élément <code>&lt;th&gt;</code> doit avoir l'attribut <code>scope="row"</code>.</li>
+			</ul>
+			<p>Un tableau simple ressemble à ceci&nbsp;:</p>
+			<table>
+					<caption>Accessibilité des lignes du réseau de surface RATP</caption>
+					<tbody><tr>
+							<th scope="col">Équipements</th>
+							<th scope="col">Nombre de lignes</th>
+							<th scope="col">Pourcentage du total de lignes</th>
+					</tr>
+					<tr>
+							<td>Rampe d'accès</td>
+							<td>260</td>
+							<td>70,46&nbsp;%</td>
+					</tr>
+					<tr>
+							<td>Annonce sonore</td>
+							<td>318</td>
+							<td>86,17&nbsp;%</td>
+					</tr>
+			</tbody></table>
+			<p>La structure de notre tableau sera donc la suivante&nbsp;:</p>
+<pre><code class="code">&lt;table&gt;
+ &lt;caption&gt;Accessibilité des lignes du réseau de surface RATP&lt;/caption&gt;
+ &lt;tr&gt;
+  &lt;th scope="col"&gt;Équipements&lt;/th&gt;
+  &lt;th scope="col"&gt;Nombre de lignes&lt;/th&gt;
+  &lt;th scope="col"&gt;Pourcentage du total de lignes&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td&gt;Rampe d'accès&lt;/td&gt;
+  &lt;td&gt;260&lt;/td&gt;
+  &lt;td&gt;70,46&nbsp;%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td&gt;Annonce sonore&lt;/td&gt;
+  &lt;td&gt;318&lt;/td&gt;
+  &lt;td&gt;86,17&nbsp;%&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+			<p><em>Ces données sont issues <a href="https://www.data.gouv.fr/fr/datasets/accessibilite-des-lignes-du-reseau-de-surface-ratp-ratp/">du site data.gouv.fr</a>. Leur exploitation dans ce contexte n'est faite qu'à titre d'illustration, elle ne relève en rien d'une statistique officielle.</em></p>
+		</article>
+
+		<article class="article" id="tableauxcomplexes">
+			<h2>Tableaux de données complexes</h2>
+			<p>Les tableaux de données complexes sont généralement des tableaux qui possèdent des cellules fusionnées ou des sous-contextes.</p>
+			<p>Voici un exemple de tableau de données complexe&nbsp;:</p>
+			<table>
+					<caption>Nombre de gares et points d'arrêts TER, en fonction du type de handicap et du type de dispositif par handicap</caption>
+					<tbody><tr>
+						  <th colspan="2">Malvoyants</th>
+						  <th colspan="2">Aveugles</th>
+					</tr>
+					<tr>
+						  <th>Obstacles contrastés</th>
+						  <th>Portes contrastées</th>
+						  <th>Obstacles détectables à la canne</th>
+						  <th>Guidage en braille</th>
+					</tr>
+					<tr>
+						  <td style="text-align:center;">73</td>
+						  <td style="text-align:center;">65</td>
+						  <td style="text-align:center;">103</td>
+						  <td style="text-align:center;">0</td>
+					</tr>
+					<tr>
+						  <td style="text-align:center;font-weight:bold" colspan="2">138</td>
+						  <td style="text-align:center;font-weight:bold" colspan="2">103</td>
+					</tr>
+			</tbody></table>
+			<p>Dans ce tableau, on trouve des en-têtes et des cellules de données fusionnées. La réparation consiste à relier chaque cellule de données explicitement grâce à des identifiants sur les en-têtes et des attributs <code>headers</code> sur les cellules de données.</p>
+<pre><code class="code">&lt;table&gt;
+ &lt;caption&gt;Nombre de gares et points d'arrêts TER, en fonction du type de handicap et du type de dispositif par handicap&lt;/caption&gt;
+ &lt;tr&gt;
+  &lt;th id="malvoyant" colspan="2"&gt;Malvoyants&lt;/th&gt;
+  &lt;th id="aveugle" colspan="2"&gt;Aveugles&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;th id="data1" headers="malvoyant"&gt;Obstacles contrastés&lt;/th&gt;
+  &lt;th id="data2" headers="malvoyant"&gt;Portes contrastées&lt;/th&gt;
+  &lt;th id="data3" headers="aveugle"&gt;Obstacles détectables à la canne&lt;/th&gt;
+  &lt;th id="data4" headers="aveugle"&gt;Guidage en braille&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td headers="malvoyant data1"&gt;73&lt;/td&gt;
+  &lt;td headers="malvoyant data2"&gt;65&lt;/td&gt;
+  &lt;td headers="aveugle data3"&gt;103&lt;/td&gt;
+  &lt;td headers="aveugle data4"&gt;0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td colspan="2" headers="malvoyant"&gt;138&lt;/td&gt;
+  &lt;td colspan="2" headers="aveugle"&gt;103&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+			<p><em>Ces données sont issues du site <a href="http://data.gouv.fr">data.gouv.fr</a> (<a href="https://www.data.gouv.fr/fr/datasets/accessibilite-des-gares-et-points-d-arret-ter-aux-personnes-a-mobilite-reduite-en-2013-npc/">Accessibilité des gares et points d'arrêt TER aux personnes à mobilité réduite en 2013</a>). Leur exploitation dans ce contexte n'est faite qu'à titre d'illustration, elle ne relève en rien d'une statistique officielle.</em></p>
+		</article>
+
+	</main>
+
+	<aside role="complementary" id="footer-block" class="clear">
+		<div class="col-1-2">
+			<h2 id="plusloin">Pour aller plus loin</h2>
+			<ul>
+				<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">Le role="presentation" dans la spécification WAI-ARIA</a></li>
+			</ul>
+			<h2 id="ailleurs">Voir ailleurs / Ressources</h2>
+			<ul>
+				<li><a href="http://disic.github.io/guide-contribuer_accessible/tableaux.html">Fiche «&nbsp;Des tableaux pour présenter des données&nbsp;» dans le guide «&nbsp;Contribuer sur le Web de manière accessible&nbsp;»</a></li>
+			</ul>
+		</div>
+		<div class="col-1-2">
+			<h2 id="criteres">Critères RGAA 3</h2>
+			<ul>
+				<li>5.1 [A]</li>
+				<li>5.2 [A]</li>
+				<li>5.3 [A]</li>
+				<li>5.4 [A]</li>
+				<li>5.5 [A]</li>
+				<li>5.6 [A]</li>
+				<li>5.7 [A]</li>
+				<li>5.8 [A]</li>
+			</ul>
+		</div>
+	</aside>
+
+	<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

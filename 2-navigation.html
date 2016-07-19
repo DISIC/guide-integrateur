@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Fiche 2 : Navigation - Guide de l'intégrateur RGAA 3</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" href="highlight/styles/tomorrow-night-eighties.css" media="all">
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="main-header">
+	<div class="inside">
+		<ul class="skip-links">
+			<li><a href="#main">contenu</a></li>
+			<li><a href="#navigation">navigation</a></li>
+		</ul>
+		<header role="banner" class="header  clear" id="banner">
+			<h1 class="title">Guide de l'intégrateur RGAA 3</h1>
+		</header>
+
+		<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+			<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+			<ul class="sommaire is-hidden" id="sommaireToggle">
+				<li><a href="index.html">Introduction</a></li>
+				<li><a href="1-gabarit-general.html">Fiche 1&nbsp;: Gabarit général</a></li>
+				<li><a href="2-navigation.html">Fiche 2&nbsp;: Navigation</a></li>
+				<li><a href="3-contenus.html">Fiche 3&nbsp;: Contenus</a></li>
+				<li><a href="4-tableaux.html">Fiche 4&nbsp;: Tableaux</a></li>
+				<li><a href="5-liens.html">Fiche 5&nbsp;: Liens</a></li>
+				<li><a href="6-formulaires.html">Fiche 6&nbsp;: Formulaires</a></li>
+				<li><a href="7-focus.html">Fiche 7&nbsp;: Prise de focus</a></li>
+				<li><a href="8-distinction-fond-forme.html">Fiche 8&nbsp;: Respecter la distinction fond et forme</a></li>
+				<li><a href="9-images.html">Fiche 9&nbsp;: Images</a></li>
+				<li><a href="10-infos-forme-couleur.html">Fiche 10&nbsp;: Informations par la couleur et la forme</a></li>
+				<li><a href="11-agrandissement-des-caracteres.html">Fiche 11&nbsp;: Agrandissement des caractères</a></li>
+				<li><a href="12-multimedia.html">Fiche 12&nbsp;: Multimédia</a></li>
+			</ul>
+		</nav>
+		<div class="github-link">
+			<p><a href="https://github.com/DISIC/guide-integrateur">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le Guide de l'intégrateur RGAA 3 (pdf, ko)" href="https://github.com/DISIC/guide-integrateur/raw/master/pdf/guide-integrateur.pdf">Télécharger</a></p>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="1-gabarit-general.html"><span aria-hidden="true"> &laquo; </span>Fiche 1&nbsp;: Gabarit général </a></li>
+			<li><a class="next" href="3-contenus.html">Fiche 3&nbsp;: Contenus <span aria-hidden="true"> &raquo; </span></a></li>
+		</ul>
+	</nav>
+
+	<main id="main" role="main">
+		<h1 class="fiche-title">Fiche 2&nbsp;: Navigation</h1>
+
+		<div class="bloc-haut">
+			<ul class="nav-context">
+				<li><a href="#introduction">Introduction - cas utilisateur</a></li>
+				<li><a href="#liensrapide">Liens d'accès rapide</a></li>
+				<li><a href="#deuxsystemesnavigation">2 systèmes de navigation au moins</a></li>
+				<li><a href="#plandusite">Plan du site</a></li>
+				<li><a href="#titredepage">Titre de pages</a></li>
+				<li><a href="#collectionpages">Collection de pages</a></li>
+				<li><a href="#encoursdeconsultation">Page en cours de consultation dans le menu</a></li>
+				<li><a href="#fildariane">Fil d'Ariane</a></li>
+				<li><a href="#ailleurs">Voir ailleurs / Ressources</a></li>
+				<li><a href="#criteres">Critères RGAA</a></li>
+			</ul>
+
+			<aside role="complementary" class="clear resume">
+				<h2 id="resume">Synthèse</h2>
+				<ul>
+					<li>Définir des titres de pages pertinents.</li>
+					<li>Implémenter un lien d'accès rapide au contenu.</li>
+					<li>Implémenter un lien d'accès rapide à la navigation principale.</li>
+					<li>Implémenter des liens d'évitement pour tous les groupes de liens importants.</li>
+					<li>Implémenter deux systèmes de navigation au moins.</li>
+				</ul>
+			</aside>
+		</div>
+
+		<article class="article" id="introduction">
+			<h2>Introduction - cas utilisateurs</h2>
+			<p>Vous devez fournir aux utilisateurs au moins deux systèmes de navigation afin de couvrir un plus large spectre de stratégie de navigation dans les contenus du site. En effet, tous les utilisateurs ne naviguent pas de la même manière et certains systèmes de navigation peuvent s'avérer trop complexes à utiliser. Par exemple, un menu de navigation trop riche, comme un méga-menu, peut nécessiter beaucoup d'actions pour un utilisateur qui ne navigue qu'au clavier et donc rendre sa recherche d'information laborieuse. Proposer un second système permet d'aider ces utilisateurs qui ont des stratégies de navigation différentes.</p>
+			<p>Certains utilisateurs peuvent avoir des difficultés à atteindre la zone de contenu principal. Par exemple&nbsp;: les utilisateurs malvoyants qui utilisent une loupe d'écran ne voient pas la page dans sa globalité. Il peut être laborieux pour ces utilisateurs de devoir scroller tous les éléments communs des pages d'un site (l'en-tête, la navigation) pour atteindre le contenu principal à chaque fois. De même, les utilisateurs aveugles qui ont une lecture linéaire de la page doivent parcourir tous les éléments redondants (titre principal, navigation, etc.) avant d'atteindre le contenu principal.</p>
+			<p>Les utilisateurs qui ne peuvent pas utiliser de souris ou un système de navigation adapté restent néanmoins ceux qui rencontrent le plus de difficultés. Pour ces utilisateurs, la zone de contenu principal, comme tous les autres éléments du site ne peut être atteinte qu’avec la tabulation ce qui peut être particulièrement laborieux.</p>
+			<p>Les liens d'accès rapide en début de contenu leur permettent de réduire considérablement leur temps de consultation, ils peuvent directement atteindre la zone de contenu principal.</p>
+		</article>
+
+		<article class="article" id="liesnrapide">
+			<h2>Liens d'accès rapide</h2>
+			<p>Vous devez fournir aux utilisateurs des liens d'accès rapide. Les liens d'accès rapide sont des ancres vers certains éléments de la page. Ainsi sur votre site, vous devez implémenter&nbsp;:</p>
+			<ul>
+			<li>un lien qui permet d'éviter ou d'accéder à la zone de contenu principale&nbsp;;</li>
+			<li>un lien qui permet d'éviter ou d'accéder à chaque groupe de liens importants (notamment la navigation).</li>
+			</ul>
+			<p>Ces liens d'accès rapide (ou d'évitement) doivent de préférence toujours être visibles. En effet, ils sont utiles aux utilisateurs aveugles, aux utilisateurs qui naviguent au clavier, mais également aux utilisateurs malvoyants qui utilisent une loupe d'écran. Ces derniers naviguent à la souris et si ces liens sont positionnés hors écran, il leur est impossible de les utiliser.</p>
+			<p>À défaut, si vous devez les positionner hors écran, vous devez au moins vous assurer que ces liens apparaissent à la prise de focus. Vous devez donc les positionner hors écran (<code>position:absolute</code>). N’utilisez surtout pas de propriétés CSS qui les rendent inactifs, telles que&nbsp;:</p>
+			<ul>
+			<li class="forbidden"><code lang="en">display: none;</code>&nbsp;;</li>
+			<li class="forbidden"><code lang="en">visibility: hidden;</code>&nbsp;;</li>
+			<li class="forbidden"><code lang="en">width</code> et <code lang="en">height</code> avec les valeurs <code>0</code> (<code lang="en">width: 0;height: 0;</code>)&nbsp;;</li>
+			<li class="forbidden"><code lang="en">font-size: 0;</code>&nbsp;;</li>
+			<li class="forbidden">attribut HTML5 <code lang="en">hidden</code>&nbsp;;</li>
+			<li class="forbidden">propriété <code>aria-hidden="true"</code>.</li>
+			</ul>
+			<p>Pour qu'ils soient efficaces, les liens d'accès rapide au contenu et à la navigation doivent être positionnés en début de code et en haut de page. En faire les premiers liens du code de votre page est la meilleure solution.</p>
+			<p class="important"><strong>Important&nbsp;:</strong> Ces liens doivent toujours être situés à la même place dans la présentation. De plus, afin que les utilisateurs aveugles, qui ont une lecture linéaire de votre site, puissent s'y retrouver, ces liens doivent toujours être dans le même ordre dans le code source.</p>
+			<p><a href="demo/2-navigation/access-rapide.html">Page de démonstration des cas d'implémentation des liens d'accès rapide</a></p>
+		</article>
+
+		<article class="article" id="deuxsystemesnavigation">
+			<h2>2 systèmes de navigation au moins</h2>
+			<p>Un site web doit proposer deux systèmes de navigation au moins, parmi&nbsp;:</p>
+			<ul>
+				<li>une navigation principale&nbsp;;</li>
+				<li>un moteur de recherche&nbsp;;</li>
+				<li>un plan du site.</li>
+			</ul>
+			<p>Pour que le moteur de recherche puisse être considéré comme un élément de navigation, il doit indexer toutes les pages du site. Ainsi, un moteur de recherche dans un catalogue qui ne permet pas de trouver la page des mentions légales du site n'est pas considéré comme un moteur de recherche.</p>
+			<p>Le plan du site quant à lui doit être représentatif de la structure générale du site. Il n'est pas demandé que soient référencées toutes les pages du site, mais seulement les pages menant aux rubriques principales. Par exemple, si le site dispose d'une rubrique «&nbsp;Actualités&nbsp;», il n'est pas nécessaire d'y faire figurer toutes les actualités publiées.</p>
+			<p>Il existe des cas particuliers pour lesquels cette recommandation est non applicable&nbsp;:</p>
+			<ul>
+				<li>un site composé d'un faible nombre de pages (2 à 3 pages) peut ne fournir qu'un menu de navigation menant vers ces pages, le menu étant alors identique au plan du site.</li>
+				<li>un site monopage («&nbsp;Single Page Application&nbsp;») peut ne fournir que des liens d'accès rapide aux différentes sections de la page, la fonction de recherche du navigateur (<kbd>Ctrl F</kbd>) permettant de chercher dans tout le contenu du site.</li>
+			</ul>
+			<h3>Ordre cohérent et présentation cohérente</h3>
+			<p>Chaque système de navigation doit avoir sur chaque ensemble de pages un ordre et une présentation cohérente&nbsp;:</p>
+			<ul>
+				<li>le système de navigation est accessible depuis une fonctionnalité identique (par exemple, pour le plan du site, la fonctionnalité est un lien ayant pour intitulé «&nbsp;plan du site&nbsp;»)&nbsp;;</li>
+				<li>la fonctionnalité est située à la même place dans la présentation (par exemple, le lien vers le plan du site est toujours situé en haut à gauche sur la page)&nbsp;;</li>
+				<li>la fonctionnalité est toujours dans le même ordre relatif dans le code source (par exemple, le lien vers le plan du site est toujours le premier élément texte et le premier lien de la page).</li>
+			</ul>
+		</article>
+		<article class="article" id="plandusite">
+			<h2>Plan du site</h2>
+			<p>Le plan du site n'est pas obligatoire, il fait partie des 3 systèmes de navigation reconnus. Si vous intégrez un plan de site, vous devez vous assurer en plus que tous les liens sont pertinents et fonctionnels. <a href="https://validator.w3.org/checklink">Vous pouvez utiliser l'outil de validation des liens du W3C</a> pour vous en assurer.</p>
+		</article>
+		<article class="article" id="titredepage">
+			<h2>Titre de pages</h2>
+			<p>Le titre des pages (balise <code>&lt;title&gt;</code>) est un élément de repère pour nombre d'utilisateurs.</p>
+			<p>Pour les personnes aveugles, utilisateurs de lecteurs d'écran, le titre de la page est le premier élément vocalisé. Pour des utilisateurs qui naviguent avec l'historique de navigation ou la liste des onglets, il est important qu'ils puissent retrouver les pages facilement en se basant sur leur titre.</p>
+			<p>Dans un certain nombre de cas, le titre de page est simple à construire, il reprend souvent le titre principal du contenu et le nom du site. Très souvent, ce n'est pas vous qui le créez, on vous impose sa construction (conception, référencement…). Dans d'autres cas, notamment pour les interfaces interactives, il faut veiller à rendre ces titres explicites&nbsp;:</p>
+			<ul>
+			<li>de collections de pages (résultats de recherche par exemple). Dans ces cas, il est important d'indiquer la pagination dans le titre&nbsp;;</li>
+			<li>lorsqu'un formulaire renvoie des erreurs, le titre de la page doit le mentionner.</li>
+			</ul>
+			<img src="img/titre-de-page.png" alt="">
+		</article>
+		<article class="article" id="collectionpages">
+			<h2>Collection de pages</h2>
+			<p>Une collection de pages est un ensemble de pages reliées les unes aux autres par des liens et ayant un thème ou une nature commune. Par exemple, les pages de résultats d'un moteur de recherche ou les pages d'un catalogue sont des collections de pages.</p>
+			<p>Pour les pages d'une collection de pages, vous devez mettre à disposition de l'utilisateur&nbsp;:</p>
+			<ul>
+				<li>un lien permettant d'accéder à la page suivante&nbsp;;</li>
+				<li>un lien permettant d'accéder à la page précédente&nbsp;;</li>
+				<li>des liens permettant d'accéder à toutes les pages de la collection.</li>
+			</ul>
+			<p>Lorsque le nombre de pages est très important, il est illusoire de vouloir mettre un lien vers chaque page. Dans ce cas, il est acceptable de présenter les liens par groupe de 10 liens par exemple («&nbsp;20-30&nbsp;»).
+			D'autres systèmes permettant d'atteindre une page quelconque d'une collection de pages peuvent être utilisés comme un champ de formulaire ou une liste <code>select</code> de navigation.</p>
+			<p class="important"><strong>Important&nbsp;:</strong> Une navigation dans une collection de pages est un élément de navigation, vous devez donc l'implémenter dans un élément <code>&lt;nav&gt;</code> avec le <code>role="navigation"</code>. Et afin de distinguer les éléments de navigation, vous pouvez les labelliser au moyen de la propriété <code>aria-label</code></p>
+			<pre><code class="code">&lt;nav role="navigation" aria-label="navigation dans la collection de pages"&gt;
+  [...]
+&lt;/nav&gt;</code></pre>
+			<p><a href="demo/2-navigation/collection.html">Page de démonstration des cas d'implémentation de la navigation dans les collections de pages</a></p>
+		</article>
+		<article class="article" id="encoursdeconsultation">
+			<h2>Page en cours de consultation dans le menu</h2>
+			<p>Cette recommandation est de niveau AAA.</p>
+			<p>Indiquer la page en cours de consultation aux utilisateurs permet de donner des points de repère quant à leur localisation dans le site.
+			Lorsque vous indiquez la page en cours dans le menu de navigation, attention aux informations par la couleur et par la forme. Si vous décidez de mettre une couleur de fond différente au lien actif, n'oubliez pas d'ajouter un <code>title</code> sur le lien sur le modèle «&nbsp;[Titre de la page] en cours de consultation&nbsp;».</p>
+			<p>La meilleure des implémentations consiste à couvrir la plus grande part d'utilisateurs, et donc&nbsp;:</p>
+			<ul>
+				<li>Utiliser une couleur de fond pour signifier la page active.</li>
+				<li>Utiliser une forme adjacente au lien, par exemple une icône (pour les utilisateurs qui perçoivent mal ou pas les contrastes de couleurs).</li>
+				<li>Ajouter un <code>title</code> sur le lien de la page active (pour les utilisateurs aveugles ou les utilisateurs qui utilisent des feuilles de styles utilisateurs).</li>
+			</ul>
+			<p><a href="demo/2-navigation/page-active.html">Page de démonstration pour la mise en évidence de la page active dans le menu de navigation</a></p>
+		</article>
+		<article class="article" id="fildariane">
+			<h2>Fil d'Ariane</h2>
+			<p>Cette recommandation est de niveau AAA.</p>
+			<p>Un fil d'Ariane est un moyen de navigation rapide et un repère dans le site, il doit permettre à l'utilisateur de s'orienter dans le site web.</p>
+			<p>Le fil d'Ariane doit donc être représentatif de la position de la page dans l'arborescence du site. Par exemple, les pages parentes doivent y être représentées.</p>
+		</article>
+
+	</main>
+
+	<aside role="complementary" id="footer-block" class="clear">
+		<div class="col-1-2">
+			<h2 id="ailleurs">Voir ailleurs / Ressources</h2>
+			<ul>
+				<li><a href="https://validator.w3.org/checklink">Outil en ligne mis à disposition par le W3C permettant de vérifier que les liens d'une page sont fonctionnels</a></li>
+			</ul>
+		</div>
+		<div class="col-1-2">
+			<h2 id="criteres">Critères RGAA 3</h2>
+			<ul>
+				<li>8.5 [A]</li>
+				<li>8.6 [A]</li>
+				<li>12.1 [AA]</li>
+				<li>12.2 [AA]</li>
+				<li>12.3 [AA]</li>
+				<li>12.4 [AA]</li>
+				<li>12.5 [AA]</li>
+				<li>12.6 [AA]</li>
+				<li>12.7 [AA]</li>
+				<li>12.8 [AAA]</li>
+				<li>12.9 [AAA]</li>
+				<li>12.11 [A]</li>
+				<li>12.12 [AAA]</li>
+			</ul>
+		</div>
+	</aside>
+
+	<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
