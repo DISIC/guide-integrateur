@@ -96,7 +96,7 @@ Ce document est la propriété du Secrétariat général à la modernisation de 
 [32]:	http://www.w3.org/Translations/NOTE-UNDERSTANDING-WCAG20-fr/Overview.html#contents
 [33]:	https://www.etalab.gouv.fr/licence-ouverte-open-licence
 [34]:	https://github.com/DISIC
-[35]: https://www.w3.org/TR/WCAG20-TECHS/
-[36]: http://disic.github.io/rgaa_methodologie/
+[35]: 	https://www.w3.org/TR/WCAG20-TECHS/
+[36]: 	http://disic.github.io/rgaa_methodologie/
 
-Ce guide est rédigé au format Markdown Vous trouverez sur ce [lien Wikipedia](https://fr.wikipedia.org/wiki/Markdown) des précisions sur ce langage. Il peut également être [consulté en ligne](https://disic.github.io/guide-integrateur/) ou au [format PDF](https://github.com/DISIC/guide-integrateur/raw/master/pdf/guide-integrateur.pdf).
+Ce guide est rédigé au format Markdown Vous trouverez sur ce [lien Wikipedia](https://fr.wikipedia.org/wiki/Markdown) des précisions sur ce langage. Il peut également être [consulté en ligne](https://disic.github.io/guide-integrateur/) ou au [format PDF (1,2 Mo)](pdf/guide-integrateur.pdf).
