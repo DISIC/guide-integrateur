@@ -134,6 +134,11 @@ h1 {
   font-family: AvenirLTStd-Heavy;
   text-transform: uppercase;
   margin:0;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
 }
 
 h1.fiche-title{
