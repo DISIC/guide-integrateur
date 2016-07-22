@@ -87,15 +87,15 @@ Dans certains cas néanmoins, le recours à une liste peut-être considéré com
 
 #### ARIA
 
-ARIA propose des propriétés qui permettent de transformer une succession d'éléments en liste non ordonnée&nbsp;: <code>role=list</code> et <code>role=list-item</code>.
+ARIA propose des propriétés qui permettent de transformer une succession d'éléments en liste non ordonnée&nbsp;: <code>role=list</code> et <code>role=listitem</code>.
 
 Toutefois, certaines fonctionnalités de navigation rapide dans les éléments de listes peuvent ne plus fonctionner avec une implémentation de liste ARIA qui devrait être réservée lorsqu'il n'est pas possible d'utiliser une vraie liste HTML.
 
 ````
   <div role="list">
-	<p role="list-item">Accueil</p>
-	<p role="list-item">Actualités</p>
-	<p role="list-item">Contact</p>
+	<p role="listitem">Accueil</p>
+	<p role="listitem">Actualités</p>
+	<p role="listitem">Contact</p>
   <div>
 ````
 
