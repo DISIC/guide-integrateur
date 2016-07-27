@@ -78,7 +78,7 @@ Pour le RGAA, un code source valide est un code source&nbsp;:
 - le contenu principal&nbsp;: <code lang="en">role="main"</code>&nbsp;;
 - le pied de page (informations légales, etc.)&nbsp;: <code lang="en">role="contentinfo"</code>&nbsp;;
 - le moteur de recherche&nbsp;: <code lang="en">role="search"</code>&nbsp;;
-- la navigation principale et les éventuelles navigations secondaires&nbsp;: <code lang="en">role="nav"</code>.
+- la navigation principale et les éventuelles navigations secondaires&nbsp;: <code lang="en">role="navigation"</code>.
 
 Dans le cas où votre site est en HTML5, chacune de ces zones est identifiée par une balise HTML5 particulière&nbsp;:
 
