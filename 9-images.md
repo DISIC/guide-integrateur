@@ -46,14 +46,14 @@ Si l'image ne véhicule aucune information, l'image n'a pas vocation à être re
 
 Nous vous renvoyons à la [fiche «&nbsp;Quand une image vaut mille mots&nbsp;» du guide «&nbsp;Contribuer sur le web de manière accessible&nbsp;»][11] pour de plus amples informations sur les différences entre les images de décoration et les images porteuses d'information.
 
-#### Cas des images <code>&gt;object&lt;</code>, <code>&gt;canvas&lt;</code> et <code>&gt;embed&lt;</code>
+#### Cas des images <code>&lt;object&gt;</code>, <code>&lt;canvas&gt;</code> et <code>&lt;embed&gt;</code>
 
-Dans le cas des images `object` ou `&gt;canvas&lt;`, vous devez ajouter la propriété <code>aria-hidden="true"</code> et vous devez vous assurer qu'aucun attribut ou aucune balise ne sont présents afin de labelliser l'image&nbsp;:
+Dans le cas des images `<object>` ou `<canvas>`, vous devez ajouter la propriété <code>aria-hidden="true"</code> et vous devez vous assurer qu'aucun attribut ou aucune balise ne sont présents afin de labelliser l'image&nbsp;:
 
-- l’alternative textuelle entre les balises ouvrantes et fermantes (`<object>` et `</object>`, ou `&gt;canvas&lt;` et `&gt;/canvas&lt;`) est vide&nbsp;;
-- la balise (`<object>` ou `&gt;canvas&lt;`), ou l’un des ses enfants, est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (`aria-label`, `aria-describedby`, `aria-labelledby` par exemple).
+- l’alternative textuelle entre les balises ouvrantes et fermantes (`<object>` et `</object>`, ou `<canvas>` et `</canvas>`) est vide&nbsp;;
+- la balise (`<object>` ou `<canvas>`), ou l’un des ses enfants, est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (`aria-label`, `aria-describedby`, `aria-labelledby` par exemple).
 
-Concernant la balise `&lt;embed&gt;`, elle doit posséder un attribut `aria-hidden="true"` et elle, ou l’un des ses enfants, doit être dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (`aria-label`, `aria-describedby`, `aria-labelledby` par exemple).
+Concernant la balise `<embed>`, elle doit posséder un attribut `aria-hidden="true"` et elle, ou l’un des ses enfants, doit être dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (`aria-label`, `aria-describedby`, `aria-labelledby` par exemple).
 
 
 #### Cas des images <code>svg</code>
