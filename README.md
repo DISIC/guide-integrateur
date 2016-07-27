@@ -87,7 +87,7 @@ Ce document est la propriété du Secrétariat général à la modernisation de 
 [13]:	5-liens.md
 [14]:	6-formulaires.md
 [15]:	7-focus.md
-[16]:	8-distinction-fond-forme.md.md
+[16]:	8-distinction-fond-forme.md
 [17]:	9-images.md
 [18]:	10-infos-forme-couleur.md
 [19]:	11-agrandissement-des-caracteres.md
