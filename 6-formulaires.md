@@ -145,7 +145,7 @@ Selon votre choix d'implémentation d'étiquette de champ (<code>label</code>, <
 Il est très courant de trouver l'indication de champs obligatoire au moyen d'un astérisque. Cette pratique est tout à fait conforme si vous donnez une légende à ce symbole, et ce **avant** le formulaire concerné.
 
 ````
-  <p>Les champs précédés d'une étoile (\*) sont obligatoires</p>
+  <p>Les champs précédés d'une étoile (*) sont obligatoires</p>
   <form>
 	<label for="nom">Nom *</label>
 	<input type="text" id="nom" />

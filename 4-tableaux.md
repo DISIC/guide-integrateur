@@ -53,7 +53,7 @@ Si vous utilisez un tableau de données, la structure doit ressembler à celle-c
 
 De plus, vous devez vous assurer que la linéarisation du tableau permet la compréhension du contenu&nbsp;: un tableau est lu de gauche à droite. Assurez-vous que le contenu reste compréhensible de cette manière.
 
-Note&nbsp;: L’API ARIA propose un mécanisme permettant de surcharger le rôle natif d’un élément pour proposer des composants. Ainsi, il est possible d’utiliser des tableaux de mise en forme pour construire des listes, par exemple en implémentant les rôles `list` et `listitem` sur les éléments du tableau. Si cet usage est fortement déconseillé, il est néanmoins conforme. Le tableau étant restitué comme une liste et non plus comme un tableau, il n’est pas utile de signaler qu’il s’agit d’un tableau de présentation via le rôle `presentation`.
+Note&nbsp;: l’API ARIA propose un mécanisme permettant de surcharger le rôle natif d’un élément pour proposer des composants. Ainsi, il est possible d’utiliser des tableaux de mise en forme pour construire des listes, par exemple en implémentant les rôles `list` et `listitem` sur les éléments du tableau. Si cet usage est fortement déconseillé, il est néanmoins conforme. Le tableau étant restitué comme une liste et non plus comme un tableau, il n’est pas utile de signaler qu’il s’agit d’un tableau de présentation via le rôle `presentation`.
 
 #### À propos du <code>role="presentation"</code>
 
