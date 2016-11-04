@@ -81,7 +81,7 @@ Chaque système de navigation doit avoir sur chaque ensemble de pages un ordre e
 
 Le plan du site n'est pas obligatoire, il fait partie des 3 systèmes de navigation reconnus. Si vous intégrez un plan de site, vous devez vous assurer en plus que tous les liens sont pertinents et fonctionnels. [Vous pouvez utiliser l'outil de validation des liens du W3C][13] pour vous en assurer.
 
-### <a name="titredepage"></a>Titre de pages
+### <a name="titredepage"></a>Titre de page
 
 Le titre des pages (balise `<title>`) est un élément de repère pour nombre d'utilisateurs.
 

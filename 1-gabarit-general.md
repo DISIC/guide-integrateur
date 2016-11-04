@@ -187,7 +187,7 @@ Souvent, dans le pied de page des maquettes de site web, on trouve des élément
 
 Ajouter les landmarks ARIA aux balises HTML5 correspondantes permet de distinguer les autres éléments du même type qui pourraient être utilisés.
 
-Vous pourriez mettre plusieurs balises `header` ou `footer` dans votre structure de site. Ces balises pouvant être contenus dans des balises `article` ou `section` pour créer des en-têtes d'articles et des pieds d'article. Ajouter les landmarks permet de différencier toutes ces balises des balises structurant le corps principal de la page.
+Vous pourriez mettre plusieurs balises `header` ou `footer` dans votre structure de site. Ces balises pouvant être contenues dans des balises `article` ou `section` pour créer des en-têtes d'articles et des pieds d'article. Ajouter les landmarks permet de différencier toutes ces balises des balises structurant le corps principal de la page.
 
 Le validateur ressort une alerte (<span lang="en">warning</span>), mais ce n'est pas une erreur. L'alerte correspond simplement au fait que les balises HTML5 ont déjà des rôles implicites correspondant à ces propriétés (`banner` est le rôle implicite de la balise `header`). L'alerte vous signifie simplement que l'utilisation de ces rôles est peut-être inutile. Néanmoins, pour les raisons évoquées au-dessus, la position du RGAA 3 reste stricte à ce sujet.
 
@@ -195,7 +195,7 @@ Vous pouvez consulter à ce sujet [les rôles ARIA implicites sur les éléments
 
 #### Utilisation optimale
 
-Afin de rendre l'utilisation des régions (balise HTML5 et landmarks) optimale, il est toujours préférable de ne pas inclure dans l'en-tête la navigation principale par exemple. De manière générale, il est préférable de ne pas imbriquer les régions principales définies ici.
+Afin de rendre l'utilisation des régions (balises HTML5 et landmarks) optimale, il est toujours préférable de ne pas inclure dans l'en-tête la navigation principale par exemple. De manière générale, il est préférable de ne pas imbriquer les régions principales définies ici.
 
 ### <a name="plusloin"></a>Pour aller plus loin
 

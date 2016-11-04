@@ -58,7 +58,7 @@ Concernant la balise `<embed>`, elle doit posséder un attribut `aria-hidden="tr
 
 #### Cas des images <code>svg</code>
 
-Dans le cas des images vectorielles, vous devez ajouter la propriété <code>aria-hidden="true"</code> et vous assurez qu'aucun attribut ou aucune balise ne sont présents afin de labelliser l'image&nbsp;:
+Dans le cas des images vectorielles, vous devez ajouter la propriété <code>aria-hidden="true"</code> et vous assurer qu'aucun attribut ou aucune balise ne sont présents afin de labelliser l'image&nbsp;:
 
 - les balises `<title>` et `<desc>` sont absentes ou vides&nbsp;;
 - la balise `<svg>`, ou l’un de ses enfants, est dépourvue d’attribut `title`&nbsp;;

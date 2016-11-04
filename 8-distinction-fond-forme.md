@@ -171,7 +171,7 @@ Lorsqu'un élément est rendu visible sur action de l'utilisateur, le composant 
 
 <img src="img/textescaches.png" alt="" />
 
-Dans cet exemple, un bouton permet d'étendre la zone de contenu pour afficher une partie de contenus qui était cachée. Lorsque l'on active le bouton, le focus reste dessus. Une fois que le contenu est apparu, le focus est toujours sur ce bouton. L'utilisateur aveugle va alors parcourir le contenu suivant en pensant accéder au contenu qu'il a afficher avec le bouton, ce qui n'est pas le cas dans cet exemple.
+Dans cet exemple, un bouton permet d'étendre la zone de contenu pour afficher une partie de contenus qui était cachée. Lorsque l'on active le bouton, le focus reste dessus. Une fois que le contenu est apparu, le focus est toujours sur ce bouton. L'utilisateur aveugle va alors parcourir le contenu suivant en pensant accéder au contenu qu'il a affiché avec le bouton, ce qui n'est pas le cas dans cet exemple.
 
 *Une exception à cette règle&nbsp;: lorque le texte caché appartient à un composant ARIA, l'ordre dans lequel il doit être implémenté, par rapport à l'évènement déclencheur, est imposé par le motif de conception ARIA utilisé.*
 

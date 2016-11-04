@@ -78,7 +78,7 @@ Dans le cas des liens mis en forme en CSS avec des icônes, la réparation consi
 
 ### <a name="titreliens"></a>Titre de liens <code>title</code>
 
-L'attribut <code>title</code> sert surtout à apporter une information complémentaire à l'intitulé du lien et à le rendre explicite. Il doit toujours être construit sur le modèle&nbsp;; intitulé du lien + informations complémentaires.
+L'attribut <code>title</code> sert surtout à apporter une information complémentaire à l'intitulé du lien et à le rendre explicite. Il doit toujours être construit sur le modèle&nbsp;: intitulé du lien + informations complémentaires.
 
 ````
 <a href="#" title="En savoir plus sur l'accessibilité numérique">En savoir plus</a>

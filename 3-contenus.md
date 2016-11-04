@@ -54,7 +54,7 @@ Il y a 3 obligations pour le titrage des contenus&nbsp;:
 - la hiérarchie de titres doit être cohérente&nbsp;;
 - tous les titres nécessaires doivent être présents.
 
-Une hiérarchie cohérente est une hiérarchie qui ne contient pas de saut dans les niveaux de titres. Par exemple, après un `h2` on doit trouver un `h3` ou un autre `h2`, mais surtout pas un `h4`.
+Une hiérarchie cohérente est une hiérarchie qui ne contient pas de saut dans les niveaux de titres. Par exemple, après un `h2` on doit trouver un `h3`, un autre `h2` ou un nouvel `h1`, mais surtout pas un `h4`.
 
 Enfin, tous les titres nécessaires à l'architecture de l'information doivent être présents. Il s'agit de proposer un plan de la page permettant de comprendre et de naviguer rapidement dans le contenu.
 
