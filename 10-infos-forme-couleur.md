@@ -31,7 +31,7 @@ Le principe à garder en tête est que toute couleur qui véhicule une informati
 
 Les informations données par la forme, la taille ou la position regroupent une grande variété de cas. Il peut s'agir d'indiquer par un effet CSS qu'un contenu est «&nbsp;affiché&nbsp;» ou «&nbsp;masqué&nbsp;», d'indiquer dans un nuage de tags le score de pertinence par la taille des caractères, d'indiquer l'élément actif d'un contenu par un effet CSS comme un triangle inséré en propriété de fond.
 
-Dans ces cas, la réparation la plus simple est pratiquement identique à celle pour les informations données par la couleur&nbsp;: mettre à disposition un équivalent soit avec une image avec une alternative (`alt=""`) pertinente, soit à l’aide d’une icône doublée d'un texte alternatif positionné hors écran.
+Dans ces cas, la réparation la plus simple est pratiquement identique à celle pour les informations données par la couleur&nbsp;: mettre à disposition un équivalent soit avec une image avec une alternative (attribut `alt`) pertinente, soit à l’aide d’une icône doublée d'un texte alternatif positionné hors écran.
 
 Dans l'extrait de code suivant, la période sélectionnée indiquée par un triangle noir utilise une image (balise `<img>`) avec une alternative pertinente.
 
